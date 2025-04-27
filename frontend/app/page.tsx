@@ -12,7 +12,6 @@ export default function Page() {
       </video>
       <div className={styles['hero-text']}>
         <h1>Coming soon</h1>
-        <p>We are working hard to bring you our new site. Stay tuned!</p>
       </div>
     </div>
   );
