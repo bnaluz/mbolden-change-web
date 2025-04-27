@@ -12,14 +12,23 @@
   min-width: 100vw;
   min-height: 100vh;
   object-fit: cover;
+  object-position: center center;
   width: 100vw;
   height: 100vh;
   z-index: 1;
 }
 
+@media (max-width: 600px) {
+  .hero-video {
+    object-position: 65% center;
+  }
+}
+
 .hero-text {
   position: absolute;
-  top: 50%;
+  background-color: var(--brand-white);
+  opacity: 0.7;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
