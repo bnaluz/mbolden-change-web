@@ -1,6 +1,6 @@
 import styles from './page.module.css';
 
-const page = () => {
+const Page = () => {
   return (
     <div className={styles['hero-container']}>
       <div className={styles['hero-top-text']}>
@@ -18,4 +18,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
