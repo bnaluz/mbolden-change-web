@@ -31,7 +31,7 @@
 
 .hero-top-text {
   position: absolute;
-  top: 2rem; /* or 1rem for less spacing */
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
   color: var(--brand-warm-yellow);
