@@ -1,6 +1,6 @@
 import styles from './page.module.css';
 
-export default function page() {
+const page = () => {
   return (
     <div className={styles['hero-container']}>
       <div className={styles['hero-top-text']}>
@@ -16,4 +16,6 @@ export default function page() {
       </div>
     </div>
   );
-}
+};
+
+export default page;
