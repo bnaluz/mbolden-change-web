@@ -11,7 +11,7 @@ export default function TestPage() {
         <div>Hello</div>
       </GridItem>
       <GridItem desktopSpan={4} mobileSpan={2}>
-        <div>Hello</div>
+        <div>Hello der</div>
       </GridItem>
     </Grid>
   );
