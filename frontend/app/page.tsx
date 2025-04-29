@@ -13,6 +13,14 @@ export default function Page() {
       <div className={styles['hero-text']}>
         <h1>Coming soon</h1>
       </div>
+      <div className={styles.statementBanner}>
+        <a href="/statement" target="_blank" rel="noopener noreferrer">
+          <span className={styles.bannerText}>
+            For a preview of the bold ideas and vision that drive us,{' '}
+            <strong>read our stand on equality and opportunity</strong>
+          </span>
+        </a>
+      </div>
     </div>
   );
 }
