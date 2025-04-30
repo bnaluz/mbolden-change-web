@@ -196,15 +196,15 @@ const page = () => {
           across key areas to:
         </p>
         <ol>
-          <li style={{ fontWeight: 'bold' }}>
-            Strengthen and Enforce Disparate Impact Protections
+          <li>
+            <strong>Strengthen and Enforce Disparate Impact Protections</strong>
             <ul>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 {' '}
                 Reinforce the principle that true equality requires examining
                 impact. Intent matters. Impact matters more.
               </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Despite the Executive Order, disparate impact liability under
                 Title VII of the Civil Rights Act remains intact, as codified by
                 Congress in 1991. Private employers and institutions must
@@ -214,105 +214,103 @@ const page = () => {
               </li>
             </ul>
           </li>
-          <li style={{ fontWeight: 'bold' }}>
-            Expand Access to Fair Credit and Lending
+          <li>
+            <strong> Expand Access to Fair Credit and Lending</strong>
             <ul>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Strengthen the Equal Credit Opportunity Act to account for
                 historical barriers faced by women and communities of color.
               </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Monitor and regulate credit scoring and AI-driven lending
                 practices that replicate past discrimination.
               </li>
             </ul>
           </li>
-          <li style={{ fontWeight: 'bold' }}>
-            Advance Labor Equity
+          <li>
+            <strong>Advance Labor Equity</strong>
             <ul>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Raise the federal minimum wage and eliminate subminimum wages.
                 When work provides stability and a living wage, people can
                 pursue education, invest in the future, and participate fully in
                 civic life.
               </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Expand access to paid family leave and caregiving supports to
                 ensure caregiving doesn’t penalize workers—especially women.
               </li>
             </ul>
           </li>
-          <li style={{ fontWeight: 'bold' }}>
-            Fund Equitable Education
+          <li>
+            <strong>Fund Equitable Education</strong>
             <ul>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Invest in K-12 education, especially in historically underfunded
                 communities. Quality education should not depend on a child’s
                 zip code or parents’ wealth.
               </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Support expanded access to higher education for marginalized
                 groups through scholarships, support programs, and outreach
                 initiatives.
               </li>
             </ul>
           </li>
-          <li style={{ fontWeight: 'bold' }}>
-            Ensure Housing Equity
+          <li>
+            <strong> Ensure Housing Equity</strong>
             <ul>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Enforce fair housing laws. Access to safe, affordable housing is
                 a basic condition for opportunity.
               </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Invest in affordable housing and protect against exclusionary
                 zoning practices.
               </li>
             </ul>
           </li>
-          <li style={{ fontWeight: 'bold' }}>
-            Strengthen Healthcare Access and Equity
+          <li>
+            <strong>Strengthen Healthcare Access and Equity</strong>
             <ul>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Expand affordable, high-quality healthcare coverage for all
                 communities.
               </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Address systemic barriers and social determinants of
                 health—because opportunity cannot flourish without health
                 security.
               </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Strengthen anti-discrimination protections in healthcare
                 settings to ensure care is fair, accessible, and free from bias
                 based on race, gender, disability, income, or identity.
               </li>
             </ul>
           </li>
-          <li style={{ fontWeight: 'bold' }}>
-            Rebuild a Trust-Based Safety Net
+          <li>
+            <strong> Rebuild a Trust-Based Safety Net</strong>
             <ul>
-              <li style={{ fontWeight: 'normal' }}>
-                Remove punitive eligibility rules for public assistance.
-              </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>Remove punitive eligibility rules for public assistance.</li>
+              <li>
                 Expand programs like guaranteed income that provide
                 unconditional, flexible cash support.
               </li>
             </ul>
           </li>
-          <li style={{ fontWeight: 'bold' }}>
-            Democratize Power and Representation
+          <li>
+            <strong> Democratize Power and Representation</strong>
             <ul>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Pursue campaign finance reform and dismantle structures that
                 concentrate political influence among the wealthy and powerful.
               </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Ensure historically excluded communities have meaningful
                 representation in policymaking and governance.
               </li>
-              <li style={{ fontWeight: 'normal' }}>
+              <li>
                 Expand access to voting by:
                 <ul>
                   <li>Implementing same-day voter registration.</li>
