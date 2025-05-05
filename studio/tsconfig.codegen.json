@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowJs": false,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["schemas/**/*.ts"],
+  "exclude": [
+    "../frontend/node_modules",
+    "../frontend/.next",
+    "../frontend/**/node_modules",
+    "node_modules"
+  ]
+}

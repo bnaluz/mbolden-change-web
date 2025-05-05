@@ -8,6 +8,9 @@
     "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build",
+    "predev": "npm run typegen",
+    "prebuild": "npm run typegen",
+    "typegen": "sanity schema extract --path=../frontend/sanity/extract.json --enforce-required-fileds && sanity typegen generate",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy"
   },
