@@ -1,0 +1,6 @@
+{
+  "path": "./schemas/**/*.ts",
+  "schema": "../frontend/sanity/extract.json",
+  "generates": "../frontend/sanity/types.ts",
+  "tsconfig": "./tsconfig.codegen.json"
+}
