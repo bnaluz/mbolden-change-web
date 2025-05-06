@@ -1,6 +1,6 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import type { PortableTextBlock } from '@portabletext/types';
-// import SanityNextImage from './SanityNextImage';
+import SanityNextImage from './SanityNextImage';
 import styles from './PortableTextComponent.module.css';
 
 type PortableTextComponentProps = {
@@ -8,19 +8,19 @@ type PortableTextComponentProps = {
 };
 
 const myPortableTextComponents: PortableTextComponents = {
-//   types: {
-//     image: ({ value }) => {
-//       if (!value || !value.asset?._ref) {
-//         return null;
-//       }
+  types: {
+    image: ({ value }) => {
+      if (!value || !value.asset?._ref) {
+        return null;
+      }
 
-//       return (
-//         <div className={styles.image}>
-//           <SanityNextImage image={value} />
-//         </div>
-//       );
-//     },
-//   },
+      return (
+        <div className={styles.image}>
+          <SanityNextImage image={value} />
+        </div>
+      );
+    },
+  },
   block: {
     normal: ({ children }) => {
       return <p className={styles.paragraph}>{children}</p>;
