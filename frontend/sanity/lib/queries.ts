@@ -24,3 +24,11 @@ export const PAGE_QUERY = defineQuery(
     }`
 );
 
+export const Pillars_Query = defineQuery(
+  `*[_type == "pillars"]{
+  _id,
+  headline,
+  description,
+  image{..., "alt": image.alt}
+  }`
+);

@@ -1,8 +1,9 @@
+'use client'
+
 import { ArticleCard } from '@/sanity/types';
 import { Article_Query } from '@/sanity/lib/queries';
 import Grid from '../Grid';
 import GridItem from '../GridItem';
-import styles from '../GridItem.module.css';
 import { useEffect, useState } from 'react';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
@@ -18,12 +19,11 @@ export default function ArticleCards() {
   }, []);
 
   return (
-    <Grid className="col-span-4">
+    <Grid>
           {articles.map((article) => (
               <GridItem
                   desktopSpan={4}
-                  mobileSpan={12}
-                  className={`${styles['col-span-4']} ${styles['col-span-m-12']}`}
+                  mobileSpan={12}                
                   key={article._id}
               >
                   {article.image && (

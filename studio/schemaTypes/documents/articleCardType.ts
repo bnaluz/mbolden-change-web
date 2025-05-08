@@ -1,6 +1,5 @@
 import { defineField, defineType } from "sanity";
-// import { format } from 'date-fns';
-// const formattedDate = format(new Date(), 'MMMM dd, yyyy');
+
 
 export const articleCardType = defineType({
     name: 'articleCard',
