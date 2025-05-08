@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Archivo_Narrow, Roboto } from 'next/font/google';
+import { Footer as FooterType } from '@/sanity/types';
+import { getFooter } from '@/lib/getFooter';
 
 const archivoNarrow = Archivo_Narrow({
   subsets: ['latin'],
@@ -21,11 +23,15 @@ export const metadata: Metadata = {
   description: 'mBOLDen CHANGE',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const footerData = (await getFooter()) as FooterType;
+
+  console.log(footerData);
+
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${archivoNarrow.variable}`}>

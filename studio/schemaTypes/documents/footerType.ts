@@ -108,8 +108,8 @@ export const footertype = defineField({
       ],
     }),
     defineField({
-      name: 'legalDisclaimer',
-      title: 'Legal Disclaimer',
+      name: 'nonProfitDisclaimer',
+      title: 'NonProfit Disclaimer',
       type: 'text',
       description: 'e.g. "My New Red Shoes is a 501(c)3 Non-Profit Organization. EIN: 20-4683289"',
       rows: 2,

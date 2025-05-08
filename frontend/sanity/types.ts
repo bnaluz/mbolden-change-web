@@ -217,7 +217,7 @@ export type Footer = {
     _type: "socialLink";
     _key: string;
   }>;
-  legalDisclaimer?: string;
+  nonProfitDisclaimer?: string;
 };
 
 export type Page = {

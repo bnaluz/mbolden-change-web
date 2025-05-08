@@ -1405,7 +1405,7 @@
         },
         "optional": true
       },
-      "legalDisclaimer": {
+      "nonProfitDisclaimer": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
