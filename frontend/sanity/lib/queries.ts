@@ -1,8 +1,13 @@
-import { client } from './client';
+import { defineQuery } from 'next-sanity';
 
 
-async function getArticleCards() {
-    const articleQuery = '*[_type == "articleCard"]{ title, publishedAt, description, image }';
-    const articles = await client.fetch(articleQuery);
-    return articles;
-}
+export const Article_Query = defineQuery(
+    `*[_type == "articleCard"]{
+    _id,
+    title,
+    publishedAt,
+    description,
+    image
+ }`
+ );
+    

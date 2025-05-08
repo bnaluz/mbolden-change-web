@@ -71,11 +71,6 @@ export type Geopoint = {
 export type PageBuilder = Array<{
   _key: string;
 } & Hero | {
-  _key: string;
-} & ArticleCard>;
-
-export type ArticleCard = {
-  _type: "articleCard";
   image?: {
     asset?: {
       _ref: string;
@@ -109,7 +104,9 @@ export type ArticleCard = {
     _type: "block";
     _key: string;
   }>;
-};
+  _type: "articleCard";
+  _key: string;
+}>;
 
 export type Hero = {
   _type: "hero";
@@ -157,6 +154,47 @@ export type Hero = {
     alt?: string;
     _type: "image";
   };
+};
+
+export type ArticleCard = {
+  _id: string;
+  _type: "articleCard";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  publishedAt?: string;
+  title?: string;
+  description?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
 };
 
 export type Page = {
@@ -233,5 +271,5 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | ArticleCard | Hero | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | Hero | ArticleCard | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
