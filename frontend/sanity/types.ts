@@ -74,9 +74,10 @@ export type PageBuilder = Array<{
 } & Hero | {
   _key: string;
 } & RichText | {
-
   _key: string;
-} & FiftyFifty>;
+} & FiftyFifty | {
+_key: string;
+} & HeroCarousel>;
 
 
 export type FiftyFifty = {
@@ -387,6 +388,12 @@ export type Footer = {
     contact?: string;
     nonProfitDisclaimer?: string;
   };
+
+export type HeroCarousel = {
+  _type: "heroCarousel";
+  slides?: Array<{
+    _key: string;
+  } & Hero>;
 };
 
 export type Page = {
@@ -464,6 +471,6 @@ export type Slug = {
 };
 
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | FiftyFifty | RichText | Hero | Header | InternalOrExternalLink | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | FiftyFifty | RichText | Hero | HeroCarousel | Header | InternalOrExternalLink | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 
 export declare const internalGroqTypeReferenceTo: unique symbol;
