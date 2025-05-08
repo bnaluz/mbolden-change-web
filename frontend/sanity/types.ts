@@ -73,39 +73,10 @@ export type PageBuilder = Array<{
 } & HeroCarousel | {
   _key: string;
 } & RichText | {
-  title?: string;
-  description?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  pillars?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "pillarCard";
-  }>;
-  _type: "pillarContainer";
-  _key: string;
-} | {
   _key: string;
 } & FiftyFifty | {
-  _key: string;
-} & TestimonialsCarousel>;
+_key: string;
+} & HeroCarousel>;
 
 export type TestimonialCard = {
   _type: "testimonialCard";
@@ -513,6 +484,12 @@ export type Footer = {
     contact?: string;
     nonProfitDisclaimer?: string;
   };
+
+export type HeroCarousel = {
+  _type: "heroCarousel";
+  slides?: Array<{
+    _key: string;
+  } & Hero>;
 };
 
 export type Page = {
@@ -589,5 +566,7 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | TestimonialCard | TestimonialsCarousel | FiftyFifty | RichText | Hero | HeroCarousel | Header | InternalOrExternalLink | PillarCard | PillarContainer | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | FiftyFifty | RichText | Hero | HeroCarousel | Header | InternalOrExternalLink | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+
 export declare const internalGroqTypeReferenceTo: unique symbol;

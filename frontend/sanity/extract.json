@@ -345,6 +345,11 @@
             },
             "rest": {
               "type": "inline",
+<<<<<<< HEAD
+              "name": "heroCarousel"
+=======
+<<<<<<< HEAD
+=======
               "name": "heroCarousel"
             }
           },
@@ -360,7 +365,25 @@
             },
             "rest": {
               "type": "inline",
+>>>>>>> cb0ab8f (install embla, add hero-carousel schema and component)
+              "name": "hero"
+>>>>>>> 21ca338 (install embla, add hero-carousel schema and component)
+            }
+          },
+          {
+            "type": "object",
+            "attributes": {
+              "_key": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "rest": {
+              "type": "inline",
               "name": "richText"
+<<<<<<< HEAD
             }
           },
           {
@@ -629,6 +652,7 @@
             "rest": {
               "type": "inline",
               "name": "fiftyFifty"
+<<<<<<< HEAD
             }
           },
           {
@@ -644,6 +668,11 @@
             "rest": {
               "type": "inline",
               "name": "testimonialsCarousel"
+=======
+
+=======
+>>>>>>> cb0ab8f (install embla, add hero-carousel schema and component)
+>>>>>>> 21ca338 (install embla, add hero-carousel schema and component)
             }
           }
         ]
@@ -651,6 +680,7 @@
     }
   },
   {
+<<<<<<< HEAD
     "name": "testimonialCard",
     "type": "type",
     "value": {
@@ -1345,7 +1375,13 @@
     }
   },
   {
+=======
+<<<<<<< HEAD
+>>>>>>> 21ca338 (install embla, add hero-carousel schema and component)
     "name": "fiftyFifty",
+=======
+    "name": "richText",
+>>>>>>> cb0ab8f (install embla, add hero-carousel schema and component)
     "type": "type",
     "value": {
       "type": "object",
@@ -1354,6 +1390,7 @@
           "type": "objectAttribute",
           "value": {
             "type": "string",
+<<<<<<< HEAD
             "value": "fiftyFifty"
           }
         },
@@ -1931,6 +1968,11 @@
             "value": "richText"
           }
         },
+=======
+            "value": "richText"
+          }
+        },
+>>>>>>> cb0ab8f (install embla, add hero-carousel schema and component)
         "text": {
           "type": "objectAttribute",
           "value": {
@@ -2600,6 +2642,13 @@
     }
   },
   {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+    "name": "pillarCard",
+
+>>>>>>> 21ca338 (install embla, add hero-carousel schema and component)
     "name": "header",
     "type": "document",
     "attributes": {
@@ -3374,6 +3423,72 @@
         "value": {
           "type": "array",
           "of": {
+<<<<<<< HEAD
+=======
+
+      }
+    }
+  },
+  {
+    "name": "internalOrExternalLink",
+=======
+    "name": "heroCarousel",
+>>>>>>> cb0ab8f (install embla, add hero-carousel schema and component)
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+<<<<<<< HEAD
+            "value": "internalOrExternalLink"
+          }
+        },
+        "title": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "isExternalLink": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        },
+        "url": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "target": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "_self"
+              },
+              {
+                "type": "string",
+                "value": "_blank"
+              }
+            ]
+          },
+          "optional": true
+        },
+        "reference": {
+          "type": "objectAttribute",
+          "value": {
+
+>>>>>>> 21ca338 (install embla, add hero-carousel schema and component)
             "type": "object",
             "attributes": {
               "_ref": {
@@ -3399,6 +3514,16 @@
             },
             "dereferencesTo": "pillarCard",
             "rest": {
+=======
+            "value": "heroCarousel"
+          }
+        },
+        "slides": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "array",
+            "of": {
+>>>>>>> cb0ab8f (install embla, add hero-carousel schema and component)
               "type": "object",
               "attributes": {
                 "_key": {
@@ -3407,6 +3532,7 @@
                     "type": "string"
                   }
                 }
+<<<<<<< HEAD
               }
             }
           }
@@ -3687,6 +3813,17 @@
           }
         },
         "optional": true
+=======
+              },
+              "rest": {
+                "type": "inline",
+                "name": "hero"
+              }
+            }
+          },
+          "optional": true
+        }
+>>>>>>> cb0ab8f (install embla, add hero-carousel schema and component)
       }
     }
   },
