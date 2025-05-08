@@ -3,6 +3,7 @@ import './globals.css';
 import { Archivo_Narrow, Roboto } from 'next/font/google';
 import { Footer as FooterType } from '@/sanity/types';
 import { getFooter } from '@/lib/getFooter';
+import Footer from '@/components/Footer';
 
 const archivoNarrow = Archivo_Narrow({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${roboto.variable} ${archivoNarrow.variable}`}>
         {children}
+        <Footer footerData={footerData} />
       </body>
     </html>
   );
