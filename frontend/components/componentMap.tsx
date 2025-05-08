@@ -12,6 +12,8 @@ const componentMap: ComponentsMap = {
   pillarContainer: dynamic(() => import('@/components/Pillars')),
   fiftyFifty: dynamic(() => import('@/components/blocks/FiftyFifty')),
   richText: dynamic(() => import('@/components/blocks/RichText')),
+  heroCarousel: dynamic(() => import('@/components/blocks/HeroCarousel')),
+
   // Add more components as needed
 };
 
