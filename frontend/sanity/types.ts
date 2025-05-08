@@ -108,7 +108,9 @@ export type PageBuilder = Array<{
   }>;
   _type: "articleCard";
   _key: string;
-}>;
+} | {
+  _key: string;
+} & PillarCard>;
 
 export type PillarCard = {
   _type: "pillarCard";
@@ -131,7 +133,6 @@ export type PillarCard = {
     _type: "block";
     _key: string;
   }>;
-  slug?: Slug;
   pillars?: Array<{
     _ref: string;
     _type: "reference";

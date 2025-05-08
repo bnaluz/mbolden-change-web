@@ -16,11 +16,6 @@ export const pillarsCardType = defineType({
             of: [{ type: "block" }],
         }),
         defineField({
-            name: "slug",
-            title: "slug",
-            type: "slug",
-        }),
-        defineField({
             name: "pillars",
             type: "array",
             of: [{ type: "reference", to: [{ type: "pillars" }] }],
