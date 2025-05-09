@@ -1,8 +1,10 @@
+//block component//
 import type { Pillars } from "@/sanity/types";
 import { urlFor } from "@/sanity/lib/image";
 import GridItem from "../GridItem";
 import {PortableText} from '@portabletext/react'
 import { getPillars } from "@/lib/getPillars";
+
 
 export default async function Pillars() {
     const pillars = await getPillars();
@@ -13,7 +15,7 @@ export default async function Pillars() {
         <section>
             <div></div>
             <div>
-                {pillars.map((p) => (
+                {pillars.map((p: Pillars) => (
                     <GridItem
                         desktopSpan={4}
                         mobileSpan={12}

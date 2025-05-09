@@ -26,5 +26,11 @@ export const articleCardType = defineType({
             of: [{ type: 'block' }],
             validation: (Rule) => Rule.required(),
         }),
+        defineField({
+            name: 'article',
+            title: 'Article',
+            type: "array",
+            of:[{type: 'reference', to: [{ type: 'article' }]}],        
+          }),
     ]
 });

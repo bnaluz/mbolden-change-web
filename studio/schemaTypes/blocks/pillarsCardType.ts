@@ -11,7 +11,7 @@ export const pillarsCardType = defineType({
             type: "string",
         }),
         defineField({
-            name: "caption",
+            name: "description",
             type: "array",
             of: [{ type: "block" }],
         }),
@@ -20,5 +20,5 @@ export const pillarsCardType = defineType({
             type: "array",
             of: [{ type: "reference", to: [{ type: "pillars" }] }],
         }),
-    ]
+    ],
 });

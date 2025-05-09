@@ -1,0 +1,28 @@
+.gridContainer {
+  padding: 2rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.cardImage {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
