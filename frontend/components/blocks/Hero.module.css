@@ -1,3 +1,32 @@
 .heroSection {
-    padding: 1rem 2rem;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+}
+
+.textSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.headline {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.pText {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.button {
+    max-width: 200px;
+}
+
+.imageSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
