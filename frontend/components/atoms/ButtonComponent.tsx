@@ -7,7 +7,7 @@ type BaseButtonAttributes = React.ComponentPropsWithoutRef<'button'>;
 type RefType = HTMLButtonElement;
 
 interface ButtonProps extends BaseButtonAttributes {
-    variant?: 'primary' | 'secondary' | 'tertiary';
+    variant?: 'primary' | 'secondary' | 'tertiary' | 'icon';
     className?: string;
     href?: string;
     isDisabled?: boolean;
@@ -26,7 +26,6 @@ const ButtonComponent = forwardRef<RefType, ButtonProps>((props, ref) => {
         isExternal,
         ...rest
     } = props;
-    console.log('ButtonComponent → href:', href, '| isExternal:', isExternal);
 
     const buttonClass = `${styles.base} ${styles[variant]} ${className || ''} ${isDisabled ? styles.disabled : ''}`;
 
