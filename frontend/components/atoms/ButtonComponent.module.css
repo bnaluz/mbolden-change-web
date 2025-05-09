@@ -80,3 +80,23 @@
         cursor:default;
     }
 }
+
+.icon {
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:not(.disabled):hover {
+        background-color: var(--brand-light-gray);
+    }
+    &.disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
