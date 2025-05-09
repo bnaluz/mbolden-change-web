@@ -11,3 +11,47 @@
   .imageWrapper {
     margin-bottom: 24px;
   }
+
+  .desktopView {
+    display: block;
+  }
+
+  .mobileView {
+    display: none;
+  }
+
+  .mobileColumn {
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 40px;
+}
+
+.mobileImageContainer {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.mobileTextContainer {
+    width: 100%;
+}
+
+  @media (max-width: 768px) {
+    
+    .desktopView {
+      display: none;
+  }
+
+  .mobileView {
+    display: block;
+    
+}
+
+  .mobileImageContainer {
+    order: 1;
+  }
+
+  .mobileTextContainer {
+    order: 2;
+  }
+
+  }

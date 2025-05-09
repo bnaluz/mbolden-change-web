@@ -22,14 +22,16 @@ export const fiftyfiftyType = defineType({
             },
         }),
         defineField({
-            name: 'leftImage',
-            title: 'Left Column Image',
-            type: 'image',
-            fields: [{ title: 'Alt Text', name: 'alt', type: 'string' }],
+            name: 'mobileLayout',
+            title: 'Mobile Layout',
+            type: 'string',
             options: {
-                hotspot: true,
+                list: [
+                    { title: 'Image on Top', value: 'imageTop' },
+                    { title: 'Text on Top', value: 'textTop'},
+                ],
+                layout: 'radio',
             },
-            hidden: ({ parent }) => parent?.leftOrRightImage !== 'left'
         }),
         defineField({
             name: 'rightImage',
@@ -40,6 +42,16 @@ export const fiftyfiftyType = defineType({
                 hotspot: true,
             },
             hidden: ({ parent }) => parent?.leftOrRightImage !== 'right',
+        }),
+        defineField({
+            name: 'leftImage',
+            title: 'Left Column Image',
+            type: 'image',
+            fields: [{ title: 'Alt Text', name: 'alt', type: 'string' }],
+            options: {
+                hotspot: true,
+            },
+            hidden: ({ parent }) => parent?.leftOrRightImage !== 'left'
         }),
         defineField({
             name: 'leftTitle',
