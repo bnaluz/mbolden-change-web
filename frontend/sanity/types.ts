@@ -305,8 +305,12 @@ export type Hero = {
     _type: "image";
     _key: string;
   }>;
-  link?: InternalOrExternalLink;
-  image: {
+  button?: {
+    label?: string;
+    internalSlug?: string;
+    externalLink?: string;
+  };
+  image?: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -485,6 +489,14 @@ export type Footer = {
     nonProfitDisclaimer?: string;
   };
 
+export type Button = {
+  _type?: 'button';
+  label?: string;
+  internalSlug?: string;
+  externalLink?: string;
+};
+
+
 export type HeroCarousel = {
   _type: "heroCarousel";
   slides?: Array<{
@@ -567,6 +579,6 @@ export type Slug = {
 };
 
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | FiftyFifty | RichText | Hero | HeroCarousel | Header | InternalOrExternalLink | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | FiftyFifty | RichText | Hero | HeroCarousel | Header | InternalOrExternalLink | Button | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 
 export declare const internalGroqTypeReferenceTo: unique symbol;

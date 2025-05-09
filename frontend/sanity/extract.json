@@ -2516,11 +2516,19 @@
           },
           "optional": true
         },
+<<<<<<< HEAD
         "link": {
           "type": "objectAttribute",
           "value": {
             "type": "inline",
             "name": "internalOrExternalLink"
+=======
+        "button": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "inline",
+            "name": "button"
+>>>>>>> b70362d (add: optional button to Hero with label and internal or external link fields in sanity)
           },
           "optional": true
         },
@@ -2643,7 +2651,10 @@
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b70362d (add: optional button to Hero with label and internal or external link fields in sanity)
 <<<<<<< HEAD
 
     "name": "pillarCard",
@@ -2762,6 +2773,41 @@
                 "value": "image"
               }
             }
+=======
+    "name": "button",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "button"
+          }
+        },
+        "url": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        }
+      }
+    }
+  },
+  {
+    "name": "heroCarousel",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "heroCarousel"
+>>>>>>> 21add18 (add: optional button to Hero with label and internal or external link fields in sanity)
           }
         },
         "optional": false

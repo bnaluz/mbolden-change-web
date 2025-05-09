@@ -1,18 +1,19 @@
-import React, { ComponentPropsWithoutRef, forwardRef, ReactNode } from 'react';
+import Link from 'next/link';
+import React, { ComponentPropsWithoutRef, forwardRef } from 'react';
 import styles from './ButtonComponent.module.css';
-import { LinkAtom, ReferenceType } from './Link';
-import type { InternalOrExternalLink } from '@/sanity/types';
 
-type BaseButtonAttributes = ComponentPropsWithoutRef<'button'>;
+
+type BaseButtonAttributes = React.ComponentPropsWithoutRef<'button'>;
 type RefType = HTMLButtonElement;
 
 interface ButtonProps extends BaseButtonAttributes {
-    variant?: 'primary' | 'secondary' | 'tertiary' | 'icon';
+    variant?: 'primary' | 'secondary' | 'tertiary';
     className?: string;
+    href?: string;
     isDisabled?: boolean;
-    link?: InternalOrExternalLink;
-    children?: ReactNode;
+    isExternal?: boolean;
 }
+
 
 const ButtonComponent = forwardRef<RefType, ButtonProps>((props, ref) => {
     const {
@@ -21,43 +22,53 @@ const ButtonComponent = forwardRef<RefType, ButtonProps>((props, ref) => {
         variant = 'primary',
         isDisabled,
         className,
-        link,
-        onClick,
+        href,
+        isExternal,
         ...rest
     } = props;
+    console.log('ButtonComponent → href:', href, '| isExternal:', isExternal);
 
-    const buttonClass = `${styles.base} ${styles[variant]} ${className || ''} ${
-        isDisabled ? styles.disabled : ''
-    }`.trim();
+    const buttonClass = `${styles.base} ${styles[variant]} ${className || ''} ${isDisabled ? styles.disabled : ''}`;
 
-    const referenceWithSlug =
-        link?.reference && 'slug' in link.reference
-        ? (link.reference as ReferenceType)
-        : undefined;
+    const handleLinkClick = (e: React.MouseEvent) => {
+        if (isDisabled) {
+            e.preventDefault();
+        }
+    };
 
-    if (link?.title && (link.isExternalLink ? link.url : referenceWithSlug)) {
-        return (
-            <LinkAtom
-                {...link}
-                reference={referenceWithSlug}
-                className={buttonClass}
-                ariaLabel={link.title}
-            >
-                {children || link.title}
-            </LinkAtom>
-        );
+    if (href) {
+        if (isExternal) {
+            return (
+                <a
+                    href={href}
+                    className={buttonClass}
+                    {...(rest as ComponentPropsWithoutRef<'a'>)}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={isDisabled ? handleLinkClick : undefined}
+                >
+                    {children}
+                </a>
+            );
+        } else {
+            return (
+                <Link href={href} className={buttonClass} {...(rest as ComponentPropsWithoutRef<'a'>)} onClick={isDisabled ? handleLinkClick : undefined}>
+                    {children}
+                </Link>
+
+            );
+        }
     }
 
     return (
         <button
-        ref={ref}
-        className={buttonClass}
-        type={type || 'button'}
-        disabled={isDisabled}
-        onClick={isDisabled ? undefined : onClick}
-        {...(rest as ComponentPropsWithoutRef<'button'>)}
+            ref={ref}
+            className={buttonClass}
+            {...(rest as ComponentPropsWithoutRef<'button'>)}
+            type={type || 'button'}
+            disabled={isDisabled}
         >
-        {children}
+            {children}
         </button>
     );
 });

@@ -11,69 +11,36 @@
     justify-content: center;
     user-select: none;
     padding: 0.5rem 1rem;
-    border-radius: none;
+    border-radius: 5px;
     border: none;
     font-size: 14px;
     cursor: pointer;
 }
 
+.focus:focus {
+    outline: 2px solid black;
+}
 
 .base:focus-visible {
-    outline: 3px solid var(--brand-aqua-teal);
-    outline-offset: 1px;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
+
 }
 
 
 
 .primary {
-    background-color: var(--brand-black);
-    padding: 0.7rem 2rem;
-    color: var(--brand-white);
+    background-color: #6046de;
+    color: white;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
     text-decoration: none;
 
     &:not(.disabled):hover {
-        background-color: var(--brand-fuchsia);
-
+        background-color: #492cda;
     }
     &:not(.disabled):active {
         box-shadow: none;
-        background-color: var(--brand-fuchsia);
-    }
-    &.disabled {
-        opacity: 0.50;
-        cursor:default;
-        box-shadow: none;
-    }
-}
-
-
-.secondary {
-    border: 2px solid var(--brand-black);
-    color: var(--brand-black);
-    text-decoration: none;
-
-    &:not(.disabled):hover {
-        background-color: var(--brand-aqua-teal);
-        border: 2px solid var(--brand-aqua-teal);
-        color: var(--brand-white);
-    }
-    &.disabled {
-        opacity: 0.50;
-        cursor:default;
-    }
-}
-
-
-.tertiary {
-    border-radius: 5px;
-    border: transparent;
-    background-color: transparent;
-    color: var(--brand-fuchsia);
-    text-decoration: none;
-
-    &:not(.disabled):hover {
-        text-decoration: underline;
+        background-color: #492cda;
     }
     &.disabled {
         opacity: 0.80;
@@ -81,22 +48,34 @@
     }
 }
 
-.icon {
-    background: transparent;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.2s ease;
+
+.secondary {
+    border: 2px solid #cccccce5;
+    color: #575757;
+    text-decoration: none;
+
 
     &:not(.disabled):hover {
-        background-color: var(--brand-light-gray);
+        background-color: #e6e6e6fe;
+        border: 2px solid #e6e6e6fe;
+        color: #222222;
     }
     &.disabled {
-        opacity: 0.5;
-        cursor: default;
+        opacity: 0.80;
+        cursor:default;
+    }
+}
+
+
+.tertiary {
+    color: #6850e3;
+    text-decoration: none;
+
+    &:not(.disabled):hover {
+        background-color: rgba(187, 187, 187, 0.1);
+    }
+    &.disabled {
+        opacity: 0.80;
+        cursor:default;
     }
 }
