@@ -72,11 +72,14 @@ export type PageBuilder = Array<{
   _key: string;
 } & Hero | {
   _key: string;
-} & RichText>;
+} & RichText | {
+  _key: string;
+} & FiftyFifty>;
 
 export type FiftyFifty = {
   _type: "fiftyFifty";
   title?: string;
+  leftOrRightImage?: "left" | "right";
   leftTitle?: string;
   leftText?: Array<{
     children?: Array<{
@@ -94,18 +97,6 @@ export type FiftyFifty = {
     }>;
     level?: number;
     _type: "block";
-    _key: string;
-  } | {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
     _key: string;
   }>;
   leftImage?: {
@@ -138,18 +129,6 @@ export type FiftyFifty = {
     }>;
     level?: number;
     _type: "block";
-    _key: string;
-  } | {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
     _key: string;
   }>;
   rightImage?: {
