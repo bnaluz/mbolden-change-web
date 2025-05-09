@@ -1792,6 +1792,14 @@
           },
           "optional": true
         },
+        "button": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "inline",
+            "name": "button"
+          },
+          "optional": true
+        },
         "image": {
           "type": "objectAttribute",
           "value": {
@@ -1872,6 +1880,7 @@
     }
   },
   {
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     "name": "pillarCard",
@@ -1998,6 +2007,41 @@
                 "value": "image"
               }
             }
+=======
+    "name": "button",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "button"
+          }
+        },
+        "url": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        }
+      }
+    }
+  },
+  {
+    "name": "heroCarousel",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "heroCarousel"
+>>>>>>> 21add18 (add: optional button to Hero with label and internal or external link fields in sanity)
           }
         },
         "optional": true

@@ -1,0 +1,81 @@
+
+.base {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: none;
+    justify-content: center;
+    user-select: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.focus:focus {
+    outline: 2px solid black;
+}
+
+.base:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
+
+}
+
+
+
+.primary {
+    background-color: #6046de;
+    color: white;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+
+    &:not(.disabled):hover {
+        background-color: #492cda;
+    }
+    &:not(.disabled):active {
+        box-shadow: none;
+        background-color: #492cda;
+    }
+    &.disabled {
+        opacity: 0.80;
+        cursor:default;
+    }
+}
+
+
+.secondary {
+    border: 2px solid #cccccce5;
+    color: #575757;
+    text-decoration: none;
+
+
+    &:not(.disabled):hover {
+        background-color: #e6e6e6fe;
+        border: 2px solid #e6e6e6fe;
+        color: #222222;
+    }
+    &.disabled {
+        opacity: 0.80;
+        cursor:default;
+    }
+}
+
+
+.tertiary {
+    color: #6850e3;
+    text-decoration: none;
+
+    &:not(.disabled):hover {
+        background-color: rgba(187, 187, 187, 0.1);
+    }
+    &.disabled {
+        opacity: 0.80;
+        cursor:default;
+    }
+}
