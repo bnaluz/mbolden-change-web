@@ -15,7 +15,7 @@ export default function Hero({ title, text, image, button }: HeroType) {
   return (
     <section className={styles.heroSection}>
       <Grid className={styles.grid}>
-        <GridItem desktopSpan={7} mobileSpan={12} desktopOffset={1}>
+        <GridItem desktopSpan={5} mobileSpan={12} desktopOffset={1}>
           <div className={styles.textSection}>
             {title && <Headline tag="h1" text={title} className={styles.headline}/>}
             {text && (
@@ -37,10 +37,8 @@ export default function Hero({ title, text, image, button }: HeroType) {
         </GridItem>
 
         {image ? (
-          <GridItem desktopSpan={5} mobileSpan={12}>
-            <div className={styles.imageSection}>
-              <SanityNextImage image={image} fit="cover" />
-            </div>
+          <GridItem desktopSpan={7} mobileSpan={12}>
+              <SanityNextImage image={image} fit="contain" className='styles.heroImage'/>
           </GridItem>
         ) : null}
 
