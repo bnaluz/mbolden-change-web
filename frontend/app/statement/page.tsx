@@ -1,9 +1,12 @@
 import React from 'react';
 import styles from './statement.module.css';
+import BackToTopButton from '@/components/atoms/BackToTopButton';
 
 const page = () => {
+  
   return (
     <main className={styles.container}>
+      <BackToTopButton />
       <section className={styles.header}>
         <h1>mBOLDen Change Position Statement</h1>
         <p className={styles.subtitle}>

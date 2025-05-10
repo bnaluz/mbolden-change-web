@@ -1,0 +1,19 @@
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+  }
+  
+  .back-to-top.visible {
+    display: block;
+  }
+  
