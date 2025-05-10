@@ -117,7 +117,14 @@ export type PageBuilder = Array<{
   _key: string;
 } | {
   _key: string;
-} & PillarCard | {
+} & PillarContainer>;
+
+export type PillarCard = {
+  _id: string;
+  _type: "pillarCard";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
   image?: {
     asset?: {
       _ref: string;
@@ -150,12 +157,10 @@ export type PageBuilder = Array<{
     _type: "block";
     _key: string;
   }>;
-  _type: "pillars";
-  _key: string;
-}>;
+};
 
-export type PillarCard = {
-  _type: "pillarCard";
+export type PillarContainer = {
+  _type: "pillarContainer";
   title?: string;
   description?: Array<{
     children?: Array<{
@@ -180,7 +185,7 @@ export type PillarCard = {
     _type: "reference";
     _weak?: boolean;
     _key: string;
-    [internalGroqTypeReferenceTo]?: "pillars";
+    [internalGroqTypeReferenceTo]?: "pillarCard";
   }>;
 };
 
@@ -288,46 +293,6 @@ export type Article = {
     _type: "image";
   };
   body?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-};
-
-export type Pillars = {
-  _id: string;
-  _type: "pillars";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  image?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  headline?: string;
-  description?: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -469,5 +434,5 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | PillarCard | RichText | Hero | Article | Pillars | ArticleCard | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | PillarCard | PillarContainer | RichText | Hero | Article | ArticleCard | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;

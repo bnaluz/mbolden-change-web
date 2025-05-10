@@ -1,24 +1,27 @@
 import { defineField, defineType } from "sanity";
 
 
-export const pillarsCardType = defineType({
+export const pillarCardType = defineType({
     name: "pillarCard",
-    type: "object",
-    title: "Pillars",
+    type: "document",
+    title: "PillarCard",
     fields: [
         defineField({
-            name: "title",
+            name: "image",
+            type: "image",
+            fields: [{ title: "Alt Text", name: "alt", type: "string" }],
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: "headline",
             type: "string",
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: "description",
             type: "array",
             of: [{ type: "block" }],
+            validation: (Rule) => Rule.required(),            
         }),
-        defineField({
-            name: "pillars",
-            type: "array",
-            of: [{ type: "reference", to: [{ type: "pillars" }] }],
-        }),
-    ],
-});
+    ]
+})

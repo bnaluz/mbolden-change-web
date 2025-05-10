@@ -6,7 +6,6 @@ export const pageBuilderType = defineType({
   of: [defineArrayMember({type: 'hero'}),
   defineArrayMember({type: 'richText'}),
   defineArrayMember({ type: 'articleCard'}),
-  defineArrayMember({ type: 'pillarCard' }),
-  defineArrayMember({type: 'pillars'}),
+  defineArrayMember({ type: 'pillarContainer'}),
 ],
 })

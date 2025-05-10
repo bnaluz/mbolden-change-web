@@ -25,28 +25,13 @@ export const PAGE_QUERY = defineQuery(
 );
 
 export const Pillars_Query = defineQuery(
- `*[_type == "pillars"]{
+ `*[_type == "pillarCard"]{
       _id,
-      headline,
+     title,
       description,
-      image{asset->{url}, alt}
+      pillars[]{
+      ...,
+      }
     }`
 );
-
-
-
-export const PillarsCard_Query = defineQuery(
-  `*[_type == "pillarCard" && slug.current == $slug][0]{
-        _id,
-        title,
-        content,
-        pillars[]->{
-          _id,
-          headline,
-          description,
-          image{asset->{url}, alt}
-        }
-      }`
-);
-
 
