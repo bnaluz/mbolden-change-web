@@ -6,7 +6,7 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    max-width: 1440px;
+    /* max-width: 1440px; */
 }
 .emblaContainer {
     display: flex;
@@ -20,7 +20,7 @@
     position: absolute;
     bottom: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
-    right: 2rem;
+    right: 1rem;
     display: flex;
     z-index: 10;
     align-content: center;
