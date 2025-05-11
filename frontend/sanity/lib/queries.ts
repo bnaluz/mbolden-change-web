@@ -12,3 +12,25 @@ export const PAGE_QUERY = defineQuery(
       ...,}
     }`
 );
+
+export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
+  _id,
+  _type,
+  _createdAt,
+  _updatedAt,
+  _rev,
+  columnCategories[]{
+  ...,
+  links[]{
+  ...,
+  reference-> {
+  _type,
+  slug}
+  },
+  },
+  socialLinks[]{
+  ...,},
+  primaryLogo,
+  secondaryLogo,
+  organizationInfo,
+  }`);
