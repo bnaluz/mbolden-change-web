@@ -21,7 +21,7 @@ export default function GridItem({
       className={classNames(
         styles['grid-item'],
         styles[`col-span-${desktopSpan}`],
-        styles[`col-span-mobile-${mobileSpan}`],
+        styles[`col-span-m-${mobileSpan}`],
         desktopOffset && styles[`col-offset-${desktopOffset}`],
         mobileOffset && styles[`col-offset-m-${mobileOffset}`],
         className

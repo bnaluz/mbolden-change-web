@@ -59,7 +59,6 @@
   padding: 1.25rem 1rem;
   background-color: var(--brand-warm-yellow);
   text-align: center;
-  z-index: 999;
   animation: pulseBanner 3s ease-in-out infinite;
 }
 
