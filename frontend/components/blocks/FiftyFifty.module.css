@@ -16,23 +16,22 @@
     display: block;
   }
 
-  .mobileView {
+  .fiftyFiftyMobileView {
     display: none;
   }
 
-  .mobileColumn {
+  .fiftyFiftyMobileContent {
     width: 100%;
-    padding: 0 15px;
-    margin-bottom: 40px;
 }
 
-.mobileImageContainer {
+.fiftyFiftyMobileImageContainer {
     width: 100%;
-    margin-bottom: 24px;
+    padding: 16px
 }
 
-.mobileTextContainer {
+.fiftyFiftyMobileTextContainer {
     width: 100%;
+    padding: 32px;
 }
 
   @media (max-width: 768px) {
@@ -41,16 +40,16 @@
       display: none;
   }
 
-  .mobileView {
+  .fiftyFiftyMobileView{
     display: block;
     
 }
 
-  .mobileImageContainer {
+  .fiftyFiftyMobileImageContainer {
     order: 1;
   }
 
-  .mobileTextContainer {
+  .fiftyFiftyMobileTextContainer {
     order: 2;
   }
 

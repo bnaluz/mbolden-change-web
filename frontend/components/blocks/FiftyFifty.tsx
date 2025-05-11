@@ -9,6 +9,7 @@ import styles from './FiftyFifty.module.css'
 
 export default function FiftyFifty({
     title,
+    mobileLayout,
     leftTitle,
     leftText,
     leftImage,
@@ -16,6 +17,7 @@ export default function FiftyFifty({
     rightText,
     rightImage
 }: FiftyFiftyType) {
+    const isImageOnTop = mobileLayout === 'imageTop'
    
     return (
         <section className={styles.section}>
@@ -32,7 +34,7 @@ export default function FiftyFifty({
                 </div>
             )}
             {leftTitle && <Headline text={leftTitle} />}
-            {leftText && <PortableTextComponent value={leftText as unknown as PortableTextBlock[]} />} 
+            {leftText && <PortableTextComponent value={leftText as PortableTextBlock[]} />} 
         </GridItem>
             
         <GridItem desktopSpan={6}>
@@ -48,32 +50,57 @@ export default function FiftyFifty({
       </div>
       
 
-      {/* Mobile View */}
-
-      <div className={styles.mobileView}>
-                
-                <div className={styles.mobileColumn}>
-                    <div className={styles.mobileImageContainer}>
-                        {leftImage && <SanityNextImage image={leftImage} fit="cover" />}
-                    </div>
-                    
-                    <div className={styles.mobileTextContainer}>
-                        {leftTitle && <Headline text={leftTitle} />}
-                        {leftText && <PortableTextComponent value={leftText as PortableTextBlock[]} />}
-                    </div>
-                </div>
-                
-                <div className={styles.mobileColumn}>
-                    <div className={styles.mobileImageContainer}>
-                        {rightImage && <SanityNextImage image={rightImage} fit="cover" />}
-                    </div>
-                    
-                    <div className={styles.mobileTextContainer}>
-                        {rightTitle && <Headline text={rightTitle} />}
-                        {rightText && <PortableTextComponent value={rightText as PortableTextBlock[]} />}
-                    </div>
-                </div>
-            </div>
-        </section>
+       {/* Mobile View */}
+       <div className={styles.fiftyFiftyMobileView}>
+        <div className={styles.fiftyFiftyMobileContent}>
+          {isImageOnTop ? (
+            <>
+              <div className={styles.fiftyFiftyMobileImageContainer}>
+                {leftImage && (
+                  <div className={styles.imageWrapper}>
+                    <SanityNextImage image={leftImage} fit="cover" />
+                  </div>
+                )}
+                {rightImage && (
+                  <div className={styles.imageWrapper}>
+                    <SanityNextImage image={rightImage} fit="cover" />
+                  </div>
+                )}
+              </div>
+            
+              <div className={styles.fiftyFiftyMobileTextContainer}>
+                {leftTitle && <Headline text={leftTitle} />}
+                {leftText && <PortableTextComponent value={leftText as PortableTextBlock[]} />}
+                {rightTitle && <Headline text={rightTitle} />}
+                {rightText && <PortableTextComponent value={rightText as PortableTextBlock[]} />}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className={styles.fiftyFiftyMobileTextContainer}>
+                {leftTitle && <Headline text={leftTitle} />}
+                {leftText && <PortableTextComponent value={leftText as PortableTextBlock[]} />}
+                {rightTitle && <Headline text={rightTitle} />}
+                {rightText && <PortableTextComponent value={rightText as PortableTextBlock[]} />}
+              </div>
+              
+              <div className={styles.fiftyFiftyMobileImageContainer}>
+                {leftImage && (
+                  <div className={styles.imageWrapper}>
+                    <SanityNextImage image={leftImage} fit="cover" />
+                  </div>
+                )}
+                {rightImage && (
+                  <div className={styles.imageWrapper}>
+                    <SanityNextImage image={rightImage} fit="cover" />
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
     )
 }
+
