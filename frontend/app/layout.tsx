@@ -31,8 +31,6 @@ export default async function RootLayout({
 }>) {
   const footerData = (await getFooter()) as FooterType;
 
-  console.log(footerData);
-
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${archivoNarrow.variable}`}>

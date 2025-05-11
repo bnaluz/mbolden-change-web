@@ -26,21 +26,6 @@ export const footertype = defineField({
       ],
     }),
     defineField({
-      name: 'secondaryLogo',
-      title: 'Secondary Logo',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          title: 'Alt Text',
-          name: 'alt',
-          type: 'string',
-        },
-      ],
-    }),
-    defineField({
       name: 'columnCategories',
       title: 'Column Categories',
       type: 'array',
@@ -108,11 +93,32 @@ export const footertype = defineField({
       ],
     }),
     defineField({
-      name: 'nonProfitDisclaimer',
-      title: 'NonProfit Disclaimer',
-      type: 'text',
-      description: 'e.g. "My New Red Shoes is a 501(c)3 Non-Profit Organization. EIN: 20-4683289"',
-      rows: 2,
+      name: 'organizationInfo',
+      title: 'Organization Info',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'address',
+          title: 'Address',
+          type: 'text',
+          rows: 2,
+          description: 'Enter the address in two lines',
+        }),
+        defineField({
+          name: 'contact',
+          title: 'Contact Info',
+          type: 'text',
+          rows: 2,
+          description: 'List each contact item (phone, email) on a separate line',
+        }),
+        defineField({
+          name: 'nonProfitDisclaimer',
+          title: 'Non-Profit Disclaimer',
+          type: 'text',
+          rows: 2,
+          description: 'Provide the 501(c)3 disclaimer and EIN number.',
+        }),
+      ],
     }),
   ],
 })

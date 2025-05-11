@@ -23,9 +23,14 @@ export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   ...,
   links[]{
   ...,
+  reference-> {
+  _type,
+  slug}
   },
   },
   socialLinks[]{
   ...,},
-  nonProfitDisclaimer,
+  primaryLogo,
+  secondaryLogo,
+  organizationInfo,
   }`);

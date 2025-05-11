@@ -190,19 +190,6 @@ export type Footer = {
     alt?: string;
     _type: "image";
   };
-  secondaryLogo?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
   columnCategories?: Array<{
     title?: string;
     links?: Array<{
@@ -217,7 +204,11 @@ export type Footer = {
     _type: "socialLink";
     _key: string;
   }>;
-  nonProfitDisclaimer?: string;
+  organizationInfo?: {
+    address?: string;
+    contact?: string;
+    nonProfitDisclaimer?: string;
+  };
 };
 
 export type Page = {
