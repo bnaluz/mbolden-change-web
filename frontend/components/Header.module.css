@@ -1,0 +1,88 @@
+.header {
+  align-items: center;
+  display: flex;
+  position: sticky;
+  height: 80px;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--brand-white);
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.logoWrapper {
+  max-width: 160px;
+  align-items: flex-start;
+  z-index: 999;
+}
+
+.donate-button {
+  display: inline-block;
+  position: relative;
+  background-color: var(--brand-warm-yellow);
+  color: var(--brand-black);
+  text-decoration: none;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 22px;
+  transform: skew(-10.25deg);
+  clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.donate-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #f3c919;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.donate-button:hover::before {
+  transform: scaleX(1);
+}
+
+.text {
+  display: inline-block;
+  transform: skewX(-10deg);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.header-link {
+  position: relative;
+  display: inline-block !important;
+  padding-bottom: 0.3em;
+  font-size: 22px;
+  font-weight: 550;
+  color: var(--brand-black);
+}
+
+.header-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--brand-aqua-teal);
+  opacity: 1;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 300ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.header-link:hover::after,
+.header-link:focus::after {
+  transform: scaleX(1);
+}
