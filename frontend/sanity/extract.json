@@ -654,6 +654,7 @@
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "fiftyFifty",
 =======
     "name": "richText",
@@ -1232,6 +1233,8 @@
     }
   },
   {
+=======
+>>>>>>> afa2805 (refactor: use internalOrExternalLink for button)
     "name": "richText",
     "type": "type",
     "value": {
@@ -1792,11 +1795,11 @@
           },
           "optional": true
         },
-        "button": {
+        "link": {
           "type": "objectAttribute",
           "value": {
             "type": "inline",
-            "name": "button"
+            "name": "internalOrExternalLink"
           },
           "optional": true
         },
@@ -1880,6 +1883,7 @@
     }
   },
   {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -2009,6 +2013,9 @@
             }
 =======
     "name": "button",
+=======
+    "name": "internalOrExternalLink",
+>>>>>>> afa2805 (refactor: use internalOrExternalLink for button)
     "type": "type",
     "value": {
       "type": "object",
@@ -2017,13 +2024,78 @@
           "type": "objectAttribute",
           "value": {
             "type": "string",
-            "value": "button"
+            "value": "internalOrExternalLink"
           }
+        },
+<<<<<<< HEAD
+        "url": {
+=======
+        "title": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "isExternalLink": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
         },
         "url": {
           "type": "objectAttribute",
           "value": {
             "type": "string"
+          },
+          "optional": true
+        },
+        "target": {
+>>>>>>> afa2805 (refactor: use internalOrExternalLink for button)
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "_self"
+              },
+              {
+                "type": "string",
+                "value": "_blank"
+              }
+            ]
+          },
+          "optional": true
+        },
+        "reference": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "object",
+            "attributes": {
+              "_ref": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              },
+              "_type": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string",
+                  "value": "reference"
+                }
+              },
+              "_weak": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "boolean"
+                },
+                "optional": true
+              }
+            },
+            "dereferencesTo": "page"
           },
           "optional": true
         }
