@@ -1,3 +1,5 @@
 export * from './heroType'
 export * from './richText'
 export * from './internalOrExternalLink'
+export * from './pillarContainerType'
+export * from './pillarCardType'

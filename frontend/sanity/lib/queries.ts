@@ -34,3 +34,14 @@ export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   secondaryLogo,
   organizationInfo,
   }`);
+
+export const PillarCard_Query = defineQuery(
+ `*[_type == "pillarCard"]{
+      _id,
+     title,
+      description,
+      pillars[]{
+      ...,
+      }
+    }`
+);
