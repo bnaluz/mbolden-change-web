@@ -681,6 +681,7 @@
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "testimonialCard",
     "type": "type",
     "value": {
@@ -1378,6 +1379,9 @@
 =======
 <<<<<<< HEAD
 >>>>>>> 21ca338 (install embla, add hero-carousel schema and component)
+=======
+<<<<<<< HEAD
+>>>>>>> 0ddfaa7 (refactor: use internalOrExternalLink for button)
     "name": "fiftyFifty",
 =======
     "name": "richText",
@@ -1956,6 +1960,8 @@
     }
   },
   {
+=======
+>>>>>>> afa2805 (refactor: use internalOrExternalLink for button)
     "name": "richText",
     "type": "type",
     "value": {
@@ -2517,6 +2523,7 @@
           "optional": true
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "link": {
           "type": "objectAttribute",
           "value": {
@@ -2529,6 +2536,13 @@
             "type": "inline",
             "name": "button"
 >>>>>>> b70362d (add: optional button to Hero with label and internal or external link fields in sanity)
+=======
+        "link": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "inline",
+            "name": "internalOrExternalLink"
+>>>>>>> 0ddfaa7 (refactor: use internalOrExternalLink for button)
           },
           "optional": true
         },
@@ -2652,9 +2666,12 @@
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> b70362d (add: optional button to Hero with label and internal or external link fields in sanity)
+=======
+>>>>>>> 0ddfaa7 (refactor: use internalOrExternalLink for button)
 <<<<<<< HEAD
 
     "name": "pillarCard",
@@ -2775,6 +2792,9 @@
             }
 =======
     "name": "button",
+=======
+    "name": "internalOrExternalLink",
+>>>>>>> afa2805 (refactor: use internalOrExternalLink for button)
     "type": "type",
     "value": {
       "type": "object",
@@ -2783,13 +2803,78 @@
           "type": "objectAttribute",
           "value": {
             "type": "string",
-            "value": "button"
+            "value": "internalOrExternalLink"
           }
+        },
+<<<<<<< HEAD
+        "url": {
+=======
+        "title": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "isExternalLink": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
         },
         "url": {
           "type": "objectAttribute",
           "value": {
             "type": "string"
+          },
+          "optional": true
+        },
+        "target": {
+>>>>>>> afa2805 (refactor: use internalOrExternalLink for button)
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "_self"
+              },
+              {
+                "type": "string",
+                "value": "_blank"
+              }
+            ]
+          },
+          "optional": true
+        },
+        "reference": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "object",
+            "attributes": {
+              "_ref": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              },
+              "_type": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string",
+                  "value": "reference"
+                }
+              },
+              "_weak": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "boolean"
+                },
+                "optional": true
+              }
+            },
+            "dereferencesTo": "page"
           },
           "optional": true
         }
