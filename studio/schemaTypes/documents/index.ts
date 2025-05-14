@@ -1,4 +1,4 @@
 export * from './pageType'
 export * from './footerType'
-// export * from '../blocks/pillarContainerType'
+export * from './pillarContainerType'
 export * from './pillarCardType'

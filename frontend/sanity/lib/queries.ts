@@ -35,13 +35,13 @@ export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   organizationInfo,
   }`);
 
-export const PillarCard_Query = defineQuery(
- `*[_type == "pillarCard"]{
-      _id,
-     title,
-      description,
-      pillars[]{
-      ...,
-      }
-    }`
-);
+export const PillarContainer_Query = defineQuery(`*[_type == "pillarContainer"]{
+  title,
+  description,
+  pillars[]->{
+    _key,
+    image,
+    headline,
+    description
+  }
+}`);

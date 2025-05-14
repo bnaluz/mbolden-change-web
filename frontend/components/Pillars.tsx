@@ -6,7 +6,7 @@ import type { PortableTextBlock } from "sanity";
 
 
 type PillarCard = {
-  _id: string;
+  _key: string;
   image: {
       _ref?: string;
       _type?: string;
@@ -24,6 +24,8 @@ type PillarContainer = {
 };
 
 export default function PillarsContainerBlock({ title, description, pillars }: PillarContainer) {
+  console.log(pillars.map(p => p._key));
+  console.log(pillars)
 
   return (
     <section className={styles.container}>
@@ -32,7 +34,7 @@ export default function PillarsContainerBlock({ title, description, pillars }: P
 
       <div className={styles.grid}>
         {pillars.map((p) => (
-          <div key={p._id} className={styles.card}>
+          <div className={styles.card} key={p._key} >
             {p.image && (
               <img
                src={urlFor(p.image).url()}
