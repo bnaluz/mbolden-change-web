@@ -21,7 +21,7 @@ export default function FiftyFifty({
    
     return (
         <section className={styles.section}>
-      {title && <Headline text={title} className={styles.title} />}
+      {title && <Headline tag='h1' text={title} className={styles.title} />}
 
       {/* Desktop View */}
       <div className={styles.desktopView}>
@@ -33,7 +33,7 @@ export default function FiftyFifty({
                     <SanityNextImage image={leftImage} fit="cover" />
                 </div>
             )}
-            {leftTitle && <Headline text={leftTitle} />}
+            {leftTitle && <Headline tag='h2' text={leftTitle} />}
             {leftText && <PortableTextComponent value={leftText as PortableTextBlock[]} />} 
         </GridItem>
             
@@ -43,7 +43,7 @@ export default function FiftyFifty({
             <SanityNextImage image={rightImage} fit="cover" />
           </div>
         )}
-        {rightTitle && <Headline text={rightTitle} />}
+        {rightTitle && <Headline tag='h2' text={rightTitle} />}
         {rightText && <PortableTextComponent value={rightText as PortableTextBlock[]} />}
         </GridItem>
       </Grid>
@@ -69,18 +69,18 @@ export default function FiftyFifty({
               </div>
             
               <div className={styles.fiftyFiftyMobileTextContainer}>
-                {leftTitle && <Headline text={leftTitle} />}
+                {leftTitle && <Headline tag='h2' text={leftTitle} />}
                 {leftText && <PortableTextComponent value={leftText as PortableTextBlock[]} />}
-                {rightTitle && <Headline text={rightTitle} />}
+                {rightTitle && <Headline tag='h2' text={rightTitle} />}
                 {rightText && <PortableTextComponent value={rightText as PortableTextBlock[]} />}
               </div>
             </>
           ) : (
             <>
               <div className={styles.fiftyFiftyMobileTextContainer}>
-                {leftTitle && <Headline text={leftTitle} />}
+                {leftTitle && <Headline tag='h2' text={leftTitle} />}
                 {leftText && <PortableTextComponent value={leftText as PortableTextBlock[]} />}
-                {rightTitle && <Headline text={rightTitle} />}
+                {rightTitle && <Headline tag='h2' text={rightTitle} />}
                 {rightText && <PortableTextComponent value={rightText as PortableTextBlock[]} />}
               </div>
               
