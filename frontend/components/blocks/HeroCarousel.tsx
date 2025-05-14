@@ -17,7 +17,7 @@ type HeroCarouselProps = {
 };
 
 export default function HeroCarousel({ slides }: HeroCarouselProps) {
-    const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true  }));
+    const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true  }));
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
     return (
