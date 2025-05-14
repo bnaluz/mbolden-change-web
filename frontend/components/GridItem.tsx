@@ -11,7 +11,7 @@ export default function GridItem({
 }: {
   children: React.ReactNode;
   desktopSpan: number;
-  mobileSpan: number;
+  mobileSpan?: number;
   desktopOffset?: number;
   mobileOffset?: number;
   className?: string;
