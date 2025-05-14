@@ -4,10 +4,10 @@ import Headline from '../atoms/Headline';
 import { PortableTextBlock } from 'next-sanity';
 import PortableTextComponent from '../PortableTextComponent';
 import ButtonComponent from '../atoms/ButtonComponent';
-import { resolveHref } from '@/lib/resolveHref';
+import { LinkAtom } from '../atoms/Link';
 import styles from './Hero.module.css';
 
-export default function Hero({ title, text, image, button }: HeroType) {
+export default function Hero({ title, text, image, link }: HeroType) {
   return (
     <section className={styles.heroSection}>
       <div className={styles.heroGrid}>
@@ -18,14 +18,13 @@ export default function Hero({ title, text, image, button }: HeroType) {
               <PortableTextComponent value={text as PortableTextBlock[]} />
             </div>
           )}
-          {button?.label && (
+          {link?.title && (
             <ButtonComponent
               className={styles.button}
-              href={resolveHref(button)}
-              isExternal={!!button.externalLink}
+              // isExternal={!!link.isExternalLink}
               variant="primary"
             >
-              {button.label}
+              <LinkAtom {...link} />
             </ButtonComponent>
           )}
         </div>
