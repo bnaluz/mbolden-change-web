@@ -7,7 +7,8 @@ type ComponentsMap = {
 
 const componentMap: ComponentsMap = {
   hero: dynamic(() => import('@/components/blocks/Hero')),
-  
+  pillarContainer: dynamic(() => import('@/components/Pillars')),
+
   // Add more components as needed
 };
 

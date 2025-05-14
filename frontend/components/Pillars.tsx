@@ -1,7 +1,7 @@
 "use client";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
-import styles from "./PillarsContainerBlock.module.css"; 
+import styles from "./PillarsContainerBlock.module.css";
 import type { PortableTextBlock } from "sanity";
 
 
@@ -24,8 +24,7 @@ type PillarContainer = {
 };
 
 export default function PillarsContainerBlock({ title, description, pillars }: PillarContainer) {
-  //console.log({ title, description, pillars });
-  
+
   return (
     <section className={styles.container}>
       {title && <h2 className={styles.title}>{title}</h2>}
@@ -34,12 +33,12 @@ export default function PillarsContainerBlock({ title, description, pillars }: P
       <div className={styles.grid}>
         {pillars.map((p) => (
           <div key={p._id} className={styles.card}>
-            {p.image.url && (
+            {p.image && (
               <img
                src={urlFor(p.image).url()}
                 alt={p.image.alt || p.headline}
                 className={styles.cardImage}
-                
+
               />
             )}
             <h3 className={styles.cardTitle}>{p.headline}</h3>
