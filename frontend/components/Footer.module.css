@@ -7,7 +7,7 @@
 }
 
 .category-title {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   margin-bottom: 4px;
 }
 
@@ -22,7 +22,7 @@
   position: relative;
   display: inline-block !important;
   padding-bottom: 0.2em;
-  font-size: 16px;
+  font-size: 17px;
   color: var(--brand-white);
 }
 
@@ -134,6 +134,6 @@
 .ein {
   margin-top: 10px;
   display: block;
-  color: #999;
-  font-size: 12px;
+  color: var(--brand-white);
+  font-size: 18px;
 }

@@ -76,20 +76,6 @@ export type PageBuilder = Array<{
   _key: string;
 } & FiftyFifty>;
 
-export type InternalOrExternalLink = {
-  _type: "internalOrExternalLink";
-  title?: string;
-  isExternalLink?: boolean;
-  url?: string;
-  target?: "_self" | "_blank";
-  reference?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "page";
-  };
-};
-
 export type FiftyFifty = {
   _type: "fiftyFifty";
   title?: string;
@@ -243,6 +229,49 @@ export type Hero = {
   };
 };
 
+export type Header = {
+  _id: string;
+  _type: "header";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  logo?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  navigationLinks?: Array<{
+    _key: string;
+  } & InternalOrExternalLink>;
+  donateCTA?: {
+    text?: string;
+    buttonLink?: InternalOrExternalLink;
+  };
+};
+
+export type InternalOrExternalLink = {
+  _type: "internalOrExternalLink";
+  title?: string;
+  isExternalLink?: boolean;
+  url?: string;
+  target?: "_self" | "_blank";
+  reference?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "page";
+  };
+};
+
 export type Footer = {
   _id: string;
   _type: "footer";
@@ -358,5 +387,5 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | InternalOrExternalLink | FiftyFifty | RichText | Hero | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | FiftyFifty | RichText | Hero | Header | InternalOrExternalLink | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
