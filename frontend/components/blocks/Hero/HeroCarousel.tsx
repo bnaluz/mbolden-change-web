@@ -5,9 +5,9 @@ import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
 import Hero from './Hero';
 import { Hero as HeroType } from '@/sanity/types';
-import ButtonComponent from '../atoms/ButtonComponent';
+import ButtonComponent from '../../atoms/ButtonComponent';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import styles from './HeroCarousel.module.css';
+import styles from './Hero.module.css';
 
 
 type SlideWithKey = HeroType & { _key?: string };

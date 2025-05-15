@@ -1,6 +1,31 @@
+.carouselFrame {
+    margin: 2rem auto;
+    padding: 0rem 2rem 2rem 2rem;
+}
+
+.sectionHeader {
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    max-width: 1440px;
+
+}
+
+.headline {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.button {
+    max-width: 200px;
+}
+
 .carouselWrapper {
     position: relative;
     overflow: hidden;
+    padding: 0 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 .embla {
     margin: 0 auto;

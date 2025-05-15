@@ -18,6 +18,9 @@ export const pageBuilderType = defineType({
   }),
   defineArrayMember({
     type: 'fiftyFifty',
-  })
-],
+  }),
+  defineArrayMember({
+    type: 'testimonialsCarousel',
+  }),
+  ],
 })
