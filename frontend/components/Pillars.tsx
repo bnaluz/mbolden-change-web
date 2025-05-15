@@ -3,27 +3,23 @@ import { urlFor } from "@/sanity/lib/image";
 import { getPillarContainer } from "@/lib/getPillarContainer";
 import styles from "./PillarsContainerBlock.module.css";
 import type { PortableTextBlock } from "sanity";
-
-type PillarCard = {
-  _id: string;
-  image: {
-    alt?: string;
-    asset: { _ref: string; _type: string };
-  };
-  headline: string;
-  description: PortableTextBlock[];
-};
+import type { PillarCard as PillarCardType } from "@/sanity/types";
 
 export default async function PillarsContainerBlock() {
   const data = await getPillarContainer();
-  
+
   if (!data) return null;
-  
-  const { title, description, pillars }: {
+
+  const {
+    title,
+    description,
+    pillars,
+  }: {
     title: string;
     description: PortableTextBlock[];
-    pillars: PillarCard[];
+    pillars: PillarCardType[];
   } = data;
+
   
   console.log(pillars.map(p => p._id))
   console.log("Pillars:", pillars);
@@ -47,7 +43,7 @@ export default async function PillarsContainerBlock() {
               />
             )}
             <h3 className={styles.cardTitle}>{p.headline}</h3>
-            <PortableText value={p.description} />
+            {p.description && <PortableText value={p.description} />}
           </div>
         ))}
       </div>
