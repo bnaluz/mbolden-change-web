@@ -8,7 +8,6 @@ import GridItem from "../GridItem";
 import styles from './FiftyFifty.module.css'
 
 export default function FiftyFifty({
-    title,
     mobileLayout,
     leftTitle,
     leftText,
@@ -21,7 +20,6 @@ export default function FiftyFifty({
    
     return (
         <section className={styles.section}>
-      {title && <Headline tag='h1' text={title} className={styles.title} />}
 
       {/* Desktop View */}
       <div className={styles.desktopView}>
