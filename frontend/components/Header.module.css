@@ -30,7 +30,7 @@
   text-decoration: none;
   padding: 8px 16px;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 21px;
   transform: skew(-10.25deg);
   clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
   overflow: hidden;
@@ -56,14 +56,14 @@
   display: inline-block;
   transform: skewX(-10deg);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 21px;
 }
 
 .header-link {
   position: relative;
   display: inline-block !important;
   padding-bottom: 0.3em;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 550;
   color: var(--brand-black);
 }
