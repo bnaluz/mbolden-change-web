@@ -368,6 +368,7 @@ export type InternalOrExternalLink = {
     _type: "reference";
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "page";
+    slug?: { current: string };
   };
 };
 

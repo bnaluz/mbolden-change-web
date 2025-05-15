@@ -4,8 +4,8 @@ import Headline from '../atoms/Headline';
 import { PortableTextBlock } from 'next-sanity';
 import PortableTextComponent from '../PortableTextComponent';
 import ButtonComponent from '../atoms/ButtonComponent';
-import { LinkAtom } from '../atoms/Link';
 import styles from './Hero.module.css';
+
 
 export default function Hero({ title, text, image, link }: HeroType) {
   return (
@@ -13,20 +13,21 @@ export default function Hero({ title, text, image, link }: HeroType) {
       <div className={styles.heroGrid}>
         <div className={styles.textSection}>
           {title && <Headline tag="h1" text={title} className={styles.headline} />}
+
           {text && (
             <div className={styles.pText}>
               <PortableTextComponent value={text as PortableTextBlock[]} />
             </div>
           )}
-          {link?.title && (
-            <ButtonComponent
-              className={styles.button}
-              // isExternal={!!link.isExternalLink}
-              variant="primary"
-            >
-              <LinkAtom {...link} />
-            </ButtonComponent>
-          )}
+
+            {link?.title &&
+              (link.isExternalLink ? link.url : link.reference?.slug?.current) && (
+                <ButtonComponent
+                  className={styles.button}
+                  variant="primary"
+                  link={link}
+                />
+              )}
         </div>
 
         {image && (

@@ -31,30 +31,7 @@ export const PAGE_QUERY = defineQuery(
       reference->{
       _type,
       slug
-    }}}},
-      _type == "testimonialsCarousel" => {
-      ...,
-      link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-    }},
-      slides[]{
-      ...,
-      link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-      }}}}
-      }
+      }}}}}
     }`
 );
 
@@ -109,4 +86,3 @@ export const HEADER_QUERY = defineQuery(`*[_type == 'header'][0]{
   slug,}}
   }
   }`);
-
