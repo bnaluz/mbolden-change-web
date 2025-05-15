@@ -1,5 +1,6 @@
 import {defineArrayMember, defineType} from 'sanity'
 
+
 export const pageBuilderType = defineType({
   name: 'pageBuilder',
   type: 'array',
@@ -8,6 +9,9 @@ export const pageBuilderType = defineType({
   }),
   defineArrayMember({
     type: 'richText',
+  }),  
+    defineArrayMember({
+    type: 'pillarContainer',
   }),
   defineArrayMember({
     type: 'fiftyFifty',
