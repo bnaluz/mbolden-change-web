@@ -11,6 +11,7 @@ const componentMap: ComponentsMap = {
   hero: dynamic(() => import('@/components/blocks/Hero')),
   fiftyFifty: dynamic(() => import('@/components/blocks/FiftyFifty')),
   richText: dynamic(() => import('@/components/blocks/RichText')),
+  statementBanner: dynamic(() => import('@/components/blocks/StatementBanner')),
   // Add more components as needed
 };
 

@@ -74,7 +74,19 @@ export type PageBuilder = Array<{
   _key: string;
 } & RichText | {
   _key: string;
-} & FiftyFifty>;
+} & FiftyFifty | {
+  _key: string;
+} & StatementBanner>;
+
+export type StatementBanner = {
+  _type: "statementBanner";
+  title?: string;
+  headline?: string;
+  body?: string;
+  cta?: InternalOrExternalLink;
+  backgroundColor?: "var(--brand-warm-yellow)" | "var(--brand-aqua-teal)" | "var(--brand-fuchsia)" | "var(--brand-black)" | "var(--brand-white)" | "var(--brand-light-gray)" | "var(--brand-creamy-beige)";
+  textColor?: "var(--brand-white)" | "var(--brand-black)";
+};
 
 export type FiftyFifty = {
   _type: "fiftyFifty";
@@ -387,5 +399,5 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | FiftyFifty | RichText | Hero | Header | InternalOrExternalLink | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | StatementBanner | FiftyFifty | RichText | Hero | Header | InternalOrExternalLink | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;

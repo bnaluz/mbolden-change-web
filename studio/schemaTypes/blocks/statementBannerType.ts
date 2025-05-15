@@ -6,6 +6,11 @@ export const statementBannerType = defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    }),
+    defineField({
       name: 'headline',
       title: 'Headline',
       type: 'string',
