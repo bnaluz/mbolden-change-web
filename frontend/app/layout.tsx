@@ -4,6 +4,9 @@ import { Archivo_Narrow, Roboto } from 'next/font/google';
 import { Footer as FooterType } from '@/sanity/types';
 import { getFooter } from '@/lib/getFooter';
 import Footer from '@/components/Footer';
+import { Header as HeaderType } from '@/sanity/types';
+import { getHeader } from '@/lib/getHeader';
+import Header from '@/components/Header';
 
 const archivoNarrow = Archivo_Narrow({
   subsets: ['latin'],
@@ -30,10 +33,12 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const footerData = (await getFooter()) as FooterType;
+  const headerData = (await getHeader()) as HeaderType;
 
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${archivoNarrow.variable}`}>
+        <Header headerData={headerData} />
         {children}
         <Footer footerData={footerData} />
       </body>

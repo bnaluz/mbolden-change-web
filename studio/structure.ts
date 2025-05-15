@@ -25,4 +25,6 @@ export const structure: StructureResolver = (S) =>
         .child(S.documentTypeList('page')),
       S.divider(),
       singletonListItem(S, 'footer', 'Footer').icon(EarthGlobeIcon),
+      S.divider(),
+      singletonListItem(S, 'header', 'Header').icon(EarthGlobeIcon),
     ])

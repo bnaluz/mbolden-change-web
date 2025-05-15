@@ -13,5 +13,8 @@ export const pageBuilderType = defineType({
     defineArrayMember({
     type: 'pillarContainer',
   }),
+  defineArrayMember({
+    type: 'fiftyFifty',
+  })
 ],
 })

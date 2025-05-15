@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
 import { ComponentType } from 'react';
+import FiftyFifty from './blocks/FiftyFifty';
+import RichText from './blocks/RichText';
 
 type ComponentsMap = {
   [key: string]: ComponentType<any>;
@@ -8,7 +10,8 @@ type ComponentsMap = {
 const componentMap: ComponentsMap = {
   hero: dynamic(() => import('@/components/blocks/Hero')),
   pillarContainer: dynamic(() => import('@/components/Pillars')),
-
+  fiftyFifty: dynamic(() => import('@/components/blocks/FiftyFifty')),
+  richText: dynamic(() => import('@/components/blocks/RichText')),
   // Add more components as needed
 };
 
