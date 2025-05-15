@@ -4,6 +4,8 @@ import { getPillarContainer } from "@/lib/getPillarContainer";
 import styles from "./PillarsContainerBlock.module.css";
 import type { PortableTextBlock } from "sanity";
 import type { PillarCard as PillarCardType } from "@/sanity/types";
+import Grid from "./Grid";
+import GridItem from "./GridItem";
 
 export default async function PillarsContainerBlock() {
   const data = await getPillarContainer();
@@ -19,11 +21,7 @@ export default async function PillarsContainerBlock() {
     description: PortableTextBlock[];
     pillars: PillarCardType[];
   } = data;
-
   
-  console.log(pillars.map(p => p._id))
-  console.log("Pillars:", pillars);
-
   return (
     <section className={styles.container}>
       {title && <h2 className={styles.title}>{title}</h2>}
@@ -32,9 +30,12 @@ export default async function PillarsContainerBlock() {
           <PortableText value={description} />
         </div>
       )}
-      <div className={styles.grid}>
+      <Grid >
         {pillars?.map((p) => (
-          <div className={styles.card} key={p._id}>
+          <GridItem
+            mobileSpan={1}
+            desktopSpan={4}
+            className={styles.card} key={p._id}>
             {p.image && (
               <img
                 src={urlFor(p.image).url()}
@@ -44,9 +45,9 @@ export default async function PillarsContainerBlock() {
             )}
             <h3 className={styles.cardTitle}>{p.headline}</h3>
             {p.description && <PortableText value={p.description} />}
-          </div>
+          </GridItem>
         ))}
-      </div>
+      </Grid>
     </section>
   );
 }
