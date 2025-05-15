@@ -6,6 +6,7 @@ import type { PortableTextBlock } from "sanity";
 import type { PillarCard as PillarCardType } from "@/sanity/types";
 import Grid from "./Grid";
 import GridItem from "./GridItem";
+import Headline from "./atoms/Headline";
 
 export default async function PillarsContainerBlock() {
   const data = await getPillarContainer();
@@ -24,7 +25,7 @@ export default async function PillarsContainerBlock() {
   
   return (
     <section className={styles.container}>
-      {title && <h2 className={styles.title}>{title}</h2>}
+      {title && <Headline tag="h2" text={title} className={styles.title} />}
       {description && (
         <div className={styles.description}>
           <PortableText value={description} />
@@ -43,7 +44,7 @@ export default async function PillarsContainerBlock() {
                 className={styles.cardImage}
               />
             )}
-            <h3 className={styles.cardTitle}>{p.headline}</h3>
+            {p.headline && <Headline tag='h3' text={p.headline} className={styles.cardTitle} />}
             {p.description && <PortableText value={p.description} />}
           </GridItem>
         ))}
