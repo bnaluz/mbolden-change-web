@@ -9,10 +9,7 @@ export const pageBuilderType = defineType({
   }),
   defineArrayMember({
     type: 'richText',
-  }),
-    defineArrayMember({
-    type: 'pillarCard',
-  }),
+  }),  
     defineArrayMember({
     type: 'pillarContainer',
   }),
