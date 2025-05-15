@@ -1,9 +1,9 @@
-import React, { ComponentPropsWithoutRef, forwardRef } from 'react';
+import React, { ComponentPropsWithoutRef, forwardRef, ReactNode } from 'react';
 import styles from './ButtonComponent.module.css';
-import { LinkAtom } from './Link';
-
+import { LinkAtom, ReferenceType } from './Link';
 import type { InternalOrExternalLink } from '@/sanity/types';
-type BaseButtonAttributes = React.ComponentPropsWithoutRef<'button'>;
+
+type BaseButtonAttributes = ComponentPropsWithoutRef<'button'>;
 type RefType = HTMLButtonElement;
 
 interface ButtonProps extends BaseButtonAttributes {
@@ -11,8 +11,8 @@ interface ButtonProps extends BaseButtonAttributes {
     className?: string;
     isDisabled?: boolean;
     link?: InternalOrExternalLink;
+    children?: ReactNode;
 }
-
 
 const ButtonComponent = forwardRef<RefType, ButtonProps>((props, ref) => {
     const {
@@ -22,29 +22,42 @@ const ButtonComponent = forwardRef<RefType, ButtonProps>((props, ref) => {
         isDisabled,
         className,
         link,
+        onClick,
         ...rest
     } = props;
 
-    const buttonClass = `${styles.base} ${styles[variant]} ${className || ''} ${isDisabled ? styles.disabled : ''}`.trim();
+    const buttonClass = `${styles.base} ${styles[variant]} ${className || ''} ${
+        isDisabled ? styles.disabled : ''
+    }`.trim();
 
-    if (link?.title && (link.isExternalLink ? link.url : link.reference?.slug?.current)) {
+    const referenceWithSlug =
+        link?.reference && 'slug' in link.reference
+        ? (link.reference as ReferenceType)
+        : undefined;
+
+    if (link?.title && (link.isExternalLink ? link.url : referenceWithSlug)) {
         return (
-            <LinkAtom {...link} className={buttonClass}>
+            <LinkAtom
+                {...link}
+                reference={referenceWithSlug}
+                className={buttonClass}
+                ariaLabel={link.title}
+            >
                 {children || link.title}
             </LinkAtom>
         );
     }
 
-
     return (
         <button
-            ref={ref}
-            className={buttonClass}
-            {...(rest as ComponentPropsWithoutRef<'button'>)}
-            type={type || 'button'}
-            disabled={isDisabled}
+        ref={ref}
+        className={buttonClass}
+        type={type || 'button'}
+        disabled={isDisabled}
+        onClick={isDisabled ? undefined : onClick}
+        {...(rest as ComponentPropsWithoutRef<'button'>)}
         >
-            {children}
+        {children}
         </button>
     );
 });

@@ -23,7 +23,7 @@ export default function Hero({ title, text, image, link }: HeroType) {
             </div>
           )}
           {link?.title &&
-            (link.isExternalLink ? link.url : link.reference?.slug?.current) && (
+            (link.isExternalLink ? link.url : link.reference) && (
               <ButtonComponent
                 className={styles.button}
                 variant="primary"
