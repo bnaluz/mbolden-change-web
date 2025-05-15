@@ -186,7 +186,7 @@ export type TestimonialCard = {
   author?: string;
   credentials?: string;
   link?: InternalOrExternalLink;
-  image?: {
+  image: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -308,7 +308,7 @@ export type Hero = {
     _key: string;
   }>;
   link?: InternalOrExternalLink;
-  image?: {
+  image: {
     asset?: {
       _ref: string;
       _type: "reference";
