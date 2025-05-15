@@ -15,7 +15,6 @@ export const testimonialCardType = defineType({
       title: 'Body',
       type: 'array',
       of: [{type: 'block'}, {type: 'image'}],
-      validation: (Rule) => Rule.required().error('A testimonial is required.'),
     }),
     defineField({
       name: 'author',
@@ -40,8 +39,6 @@ export const testimonialCardType = defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required().error('Testimonial image is required.'),
-
     }),
   ],
 })

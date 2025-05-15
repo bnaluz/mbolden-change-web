@@ -31,14 +31,13 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                     ))}
                 </div>
 
-                {slides.length > 1 && (
-                    <div className={styles.arrowButtonsContainer}>
+                <div className={styles.arrowButtonsContainer}>
                     <ButtonComponent
                         variant='icon'
                         className={styles.arrowButtons}
                         onClick={() => emblaApi?.scrollPrev()}
                         aria-label="Previous slide"
-                        >
+                    >
                         <IoIosArrowBack />
                     </ButtonComponent>
                     <ButtonComponent
@@ -46,11 +45,10 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                         className={styles.arrowButtons}
                         onClick={() => emblaApi?.scrollNext()}
                         aria-label="Next slide"
-                        >
+                    >
                         <IoIosArrowForward />
                     </ButtonComponent>
                 </div>
-                )}
             </div>
 
         </section>

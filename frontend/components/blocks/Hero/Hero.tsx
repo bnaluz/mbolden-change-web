@@ -10,27 +10,31 @@ import styles from './Hero.module.css';
 export default function Hero({ title, text, image, link }: HeroType) {
   return (
     <section className={styles.heroSection}>
-      <div className={styles.imageWrapper}>
-        {image && (
-          <SanityNextImage image={image} fit="cover" className={styles.heroImage} />
-        )}
-
-        <div className={styles.overlayContent}>
+      <div className={styles.heroGrid}>
+        <div className={styles.textSection}>
           {title && <Headline tag="h1" text={title} className={styles.headline} />}
+
           {text && (
             <div className={styles.pText}>
               <PortableTextComponent value={text as PortableTextBlock[]} />
             </div>
           )}
-          {link?.title &&
-            (link.isExternalLink ? link.url : link.reference) && (
-              <ButtonComponent
-                className={styles.button}
-                variant="primary"
-                link={link}
-              />
-            )}
+
+            {link?.title &&
+              (link.isExternalLink ? link.url : link.reference?.slug?.current) && (
+                <ButtonComponent
+                  className={styles.button}
+                  variant="primary"
+                  link={link}
+                />
+              )}
         </div>
+
+        {image && (
+          <div className={styles.imageSection}>
+            <SanityNextImage image={image} fit="cover" className={styles.heroImage} />
+          </div>
+        )}
       </div>
     </section>
   );

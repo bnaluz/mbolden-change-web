@@ -31,6 +31,7 @@
 
 .tstImage {
     height: auto;
+    /* max-height: auto; */
     height: 500px;
     object-fit: cover;
 }
@@ -42,7 +43,7 @@
 }
 
 .pText {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
@@ -50,54 +51,26 @@
     max-width: 200px;
 }
 
-.desktopView {
-    display: block;
-}
-.mobileView {
-    display: none;
-}
 
-@media (max-width: 768px) {
-    .desktopView {
-        display: none;
+/* @media (max-width: 1330px) {
+    .heroGrid {
+        grid-template-columns: 1fr;
     }
-
-    .mobileView {
-        display: block;
+    .textSection {
+        grid-column: span 1;
+        padding: 0 1rem ;
     }
-
-    .mobileContent {
-        background-color: var(--brand-light-gray);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: auto;
-        padding: 1rem;
-    }
-
-    .mobileImageSection {
-        width: auto;
-        max-width: 50%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-left: 1rem;
-    }
-
-    .mobileImageSection img {
+    .imageSection {
+        grid-column: span 1;
+        order: -1;
         width: 100%;
         height: auto;
+    }
+    .heroImage {
+        min-height: 300px;
         object-fit: cover;
     }
-
-    .mobileTextSection {
-        width: 75%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .headline {
+        font-size: 3rem;
     }
-    .pText {
-        margin-bottom: 1rem;
-    }
-}
+} */

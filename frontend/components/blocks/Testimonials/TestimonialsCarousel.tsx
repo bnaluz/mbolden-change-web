@@ -22,7 +22,7 @@ type TestimonialsCarouselProps = {
 };
 
 export default function TestimonialsCarousel({ title, text, link, slides }: TestimonialsCarouselProps) {
-    const autoplay = useRef(Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true  }));
+    const autoplay = useRef(Autoplay({ delay: 600000, stopOnInteraction: false, stopOnMouseEnter: true  })); //reminder: change back delay to 6000
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
     return (
@@ -44,7 +44,6 @@ export default function TestimonialsCarousel({ title, text, link, slides }: Test
                         ))}
                     </div>
 
-                    {slides.length > 1 && (
                     <div className={styles.arrowButtonsContainer}>
                         <ButtonComponent
                             variant='icon'
@@ -63,7 +62,6 @@ export default function TestimonialsCarousel({ title, text, link, slides }: Test
                             <IoIosArrowForward />
                         </ButtonComponent>
                     </div>
-                    )}
                 </div>
 
             </section>
