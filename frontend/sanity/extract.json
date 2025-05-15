@@ -988,7 +988,7 @@
               ]
             }
           },
-          "optional": true
+          "optional": false
         },
         "author": {
           "type": "objectAttribute",
@@ -1087,6 +1087,7 @@
               }
             }
           },
+<<<<<<< HEAD
           "optional": true
 <<<<<<< HEAD
         },
@@ -1539,6 +1540,9 @@
           "optional": true
 =======
 >>>>>>> b59dee1 (add: testimonial card and carousel)
+=======
+          "optional": false
+>>>>>>> c5f8c5c (fix: sanity validations for carousels and nav visibility)
         }
       }
     }
@@ -2504,7 +2508,7 @@
               }
             }
           },
-          "optional": true
+          "optional": false
         }
       }
     }

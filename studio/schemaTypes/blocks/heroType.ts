@@ -29,6 +29,7 @@ export const heroType = defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required().error('Hero image is required.'),
     }),
   ],
 })
