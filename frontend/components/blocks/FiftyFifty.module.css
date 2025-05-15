@@ -1,0 +1,56 @@
+.section {
+    padding: 32px 0;
+    width: 100%;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .imageWrapper {
+    margin-bottom: 24px;
+  }
+
+  .desktopView {
+    display: block;
+  }
+
+  .fiftyFiftyMobileView {
+    display: none;
+  }
+
+  .fiftyFiftyMobileContent {
+    width: 100%;
+}
+
+.fiftyFiftyMobileImageContainer {
+    width: 100%;
+    padding: 16px
+}
+
+.fiftyFiftyMobileTextContainer {
+    width: 100%;
+    padding: 32px;
+}
+
+  @media (max-width: 768px) {
+    
+    .desktopView {
+      display: none;
+  }
+
+  .fiftyFiftyMobileView{
+    display: block;
+    
+}
+
+  .fiftyFiftyMobileImageContainer {
+    order: 1;
+  }
+
+  .fiftyFiftyMobileTextContainer {
+    order: 2;
+  }
+
+  }
