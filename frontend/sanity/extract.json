@@ -395,13 +395,6 @@
             "value": "fiftyFifty"
           }
         },
-        "title": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": true
-        },
         "leftOrRightImage": {
           "type": "objectAttribute",
           "value": {

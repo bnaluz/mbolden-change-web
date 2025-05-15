@@ -78,7 +78,6 @@ export type PageBuilder = Array<{
 
 export type FiftyFifty = {
   _type: "fiftyFifty";
-  title?: string;
   leftOrRightImage?: "left" | "right";
   mobileLayout?: "imageTop" | "textTop";
   rightImage?: {

@@ -6,11 +6,6 @@ export const fiftyfiftyType = defineType({
     type: 'object',
     fields: [
         defineField({
-            name: 'title',
-            title: 'Title',
-            type: 'string',
-        }),
-        defineField({
             name: 'leftOrRightImage',
             type: 'string',
             options: {
