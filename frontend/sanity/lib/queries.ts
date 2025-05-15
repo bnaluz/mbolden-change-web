@@ -9,7 +9,29 @@ export const PAGE_QUERY = defineQuery(
     title,
     slug,
     content[]{
-      ...,}
+      ...,
+    link {
+      title,
+      isExternalLink,
+      url,
+      target,
+      reference->{
+      _type,
+      slug
+    }},
+      _type == "heroCarousel" => {
+      ...,
+      slides[]{
+      ...,
+      link {
+      title,
+      isExternalLink,
+      url,
+      target,
+      reference->{
+      _type,
+      slug
+      }}}}}
     }`
 );
 
