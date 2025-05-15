@@ -34,3 +34,21 @@ export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   secondaryLogo,
   organizationInfo,
   }`);
+
+export const HEADER_QUERY = defineQuery(`*[_type == 'header'][0]{
+  ...,
+  navigationLinks[]{
+  ...,
+  reference-> {
+  _type,
+  slug}
+  },
+  donateCTA{
+  ...,
+  buttonLink{
+  ...,
+  reference-> {
+  _type,
+  slug,}}
+  }
+  }`);
