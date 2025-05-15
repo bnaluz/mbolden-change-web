@@ -35,11 +35,11 @@ export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   organizationInfo,
   }`);
 
-export const PillarContainer_Query = defineQuery(`*[_type == "pillarContainer"]{
+export const PillarContainer_Query = defineQuery(`*[_type == "pillarContainer"][0]{
   title,
   description,
-  pillars[]->{
-    _key,
+  pillars[] ->{
+    _id,
     image,
     headline,
     description
