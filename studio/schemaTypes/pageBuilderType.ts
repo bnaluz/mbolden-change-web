@@ -9,5 +9,8 @@ export const pageBuilderType = defineType({
   defineArrayMember({
     type: 'richText',
   }),
+  defineArrayMember({
+    type: 'fiftyFifty',
+  })
 ],
 })
