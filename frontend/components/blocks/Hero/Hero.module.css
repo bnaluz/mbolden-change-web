@@ -1,14 +1,19 @@
 .heroSection {
     width: 100%;
+    max-height: 800px;
+    position: relative;
+    overflow:hidden;
     margin: 0;
     padding: 0;
 }
 
-.heroGrid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
+.imageWrapper {
+    position: relative;
+    max-height: 800px;
+    /* display: grid; */
     width: 100%;
+    height: auto;
+    gap: 2rem;
 }
 
 .textSection {
@@ -20,21 +25,26 @@
     padding: 0 2rem 0 3rem;
 }
 
-.imageSection {
-    grid-column: span 7;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
 
 .heroImage {
     width: 100%;
-    height: auto;
-    min-height: 700px;
+    height: 100%;
+    max-height: 800px;
+    /* min-height: 700px; */
     object-fit: cover;
 }
 
+.overlayContent {
+    background-color: rgba(0, 0, 0, 0.401);
+    padding: 2rem;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    z-index: 2;
+    color: var(--brand-white);
+    width: 100%;
+    /* max-width: 700px; */
+}
 .headline {
     font-size: 5rem;
     font-weight: 800;
