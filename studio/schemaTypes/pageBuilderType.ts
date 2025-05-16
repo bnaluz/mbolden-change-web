@@ -8,9 +8,6 @@ export const pageBuilderType = defineType({
     type: 'heroCarousel',
   }),
   defineArrayMember({
-    type: 'hero',
-  }),
-  defineArrayMember({
     type: 'richText',
   }),
     defineArrayMember({
