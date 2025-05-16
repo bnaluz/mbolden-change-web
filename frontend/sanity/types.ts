@@ -68,91 +68,44 @@ export type Geopoint = {
   alt?: number;
 };
 
-
 export type PageBuilder = Array<{
   _key: string;
-<<<<<<< HEAD
-} & Hero | {
-  _key: string;
-} & RichText | {
-  _key: string;
-} & FiftyFifty | {
-_key: string;
 } & HeroCarousel | {
   _key: string;
 } & RichText | {
+  title?: string;
+  description?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  pillars?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "pillarCard";
+  }>;
+  _type: "pillarContainer";
+  _key: string;
+} | {
+  _key: string;
+} & FiftyFifty | {
   _key: string;
 } & TestimonialsCarousel>;
-
-export type FiftyFifty = {
-  _type: "fiftyFifty";
-  leftOrRightImage?: "left" | "right";
-  mobileLayout?: "imageTop" | "textTop";
-  rightImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  leftImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  leftTitle?: string;
-  leftText?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  rightTitle?: string;
-  rightText?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-};
 
 export type TestimonialCard = {
   _type: "testimonialCard";
@@ -244,6 +197,76 @@ export type TestimonialsCarousel = {
   } & TestimonialCard>;
 };
 
+export type FiftyFifty = {
+  _type: "fiftyFifty";
+  leftOrRightImage?: "left" | "right";
+  mobileLayout?: "imageTop" | "textTop";
+  rightImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  leftImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  leftTitle?: string;
+  leftText?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  rightTitle?: string;
+  rightText?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+};
+
 export type RichText = {
   _type: "richText";
   text?: Array<{
@@ -327,6 +350,13 @@ export type Hero = {
   };
 };
 
+export type HeroCarousel = {
+  _type: "heroCarousel";
+  slides?: Array<{
+    _key: string;
+  } & Hero>;
+};
+
 export type Header = {
   _id: string;
   _type: "header";
@@ -334,7 +364,7 @@ export type Header = {
   _updatedAt: string;
   _rev: string;
   title?: string;
-  logo?: {
+  logo: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -376,7 +406,7 @@ export type PillarCard = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  image?: {
+  image: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -389,8 +419,8 @@ export type PillarCard = {
     alt?: string;
     _type: "image";
   };
-  headline?: string;
-  description?: Array<{
+  headline: string;
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -485,13 +515,6 @@ export type Footer = {
   };
 };
 
-export type HeroCarousel = {
-  _type: "heroCarousel";
-  slides?: Array<{
-    _key: string;
-  } & Hero>;
-};
-
 export type Page = {
   _id: string;
   _type: "page";
@@ -566,7 +589,5 @@ export type Slug = {
   source?: string;
 };
 
-
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | FiftyFifty | TestimonialCard | TestimonialsCarousel | RichText | Hero | HeroCarousel | Header | InternalOrExternalLink | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
-
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | PageBuilder | TestimonialCard | TestimonialsCarousel | FiftyFifty | RichText | Hero | HeroCarousel | Header | InternalOrExternalLink | PillarCard | PillarContainer | Footer | Page | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
