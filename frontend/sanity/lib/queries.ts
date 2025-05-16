@@ -36,16 +36,21 @@ export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   }`);
 
 
-export const PillarContainer_Query = defineQuery(`*[_type == "pillarContainer"][0]{
-  title,
-  description,
-  pillars[]->{
-    _id,
-    image,
-    headline,
-    description
+export const PillarContainer_Query = `
+  *[_type == "pillarContainer"][0]{
+    title,
+    description,
+    pillars[]->{
+      _id,
+      image,
+      headline,
+      description
+    }
   }
-}`);
+`;
+
+
+
 
 export const HEADER_QUERY = defineQuery(`*[_type == 'header'][0]{
   ...,
