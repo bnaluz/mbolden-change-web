@@ -5,6 +5,7 @@ type LinkAtomProps = Omit<InternalOrExternalLinkType, 'reference' | '_type'> & {
   className?: string;
   ariaLabel?: string;
   reference?: ReferenceType;
+  children?: React.ReactNode;
 };
 
 export type ReferenceType = {
