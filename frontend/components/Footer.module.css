@@ -1,7 +1,6 @@
 .footer {
   background-color: var(--brand-black);
   color: var(--brand-white);
-  margin-top: 12px;
   padding: 48px 48px 24px 48px;
   width: 100%;
 }

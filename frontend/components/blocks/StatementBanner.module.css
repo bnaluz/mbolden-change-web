@@ -4,5 +4,24 @@
   box-sizing: border-box;
   padding: 4rem 1.5rem;
   text-align: center;
-  background-color: black;
+}
+
+.body {
+  padding-top: 1rem;
+  margin: 0 auto;
+  display: flex;
+  max-width: 1240px;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.button {
+  outline: none;
+  border-color: transparent;
+  background: none;
+  cursor: pointer;
+  margin-top: 4px;
+  font-size: 17px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
