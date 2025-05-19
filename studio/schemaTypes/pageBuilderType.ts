@@ -5,16 +5,19 @@ export const pageBuilderType = defineType({
   name: 'pageBuilder',
   type: 'array',
   of: [defineArrayMember({
-    type: 'hero',
+    type: 'heroCarousel',
   }),
   defineArrayMember({
     type: 'richText',
-  }),  
+  }),
     defineArrayMember({
     type: 'pillarContainer',
   }),
   defineArrayMember({
     type: 'fiftyFifty',
-  })
-],
+  }),
+  defineArrayMember({
+    type: 'testimonialsCarousel',
+  }),
+  ],
 })

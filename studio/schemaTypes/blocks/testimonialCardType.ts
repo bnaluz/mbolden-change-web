@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
-export const heroType = defineType({
-  name: 'hero',
-  title: 'Hero Section',
+export const testimonialCardType = defineType({
+  name: 'testimonialCard',
+  title: 'Testimonial Section',
   type: 'object',
   fields: [
     defineField({
@@ -15,6 +15,17 @@ export const heroType = defineType({
       title: 'Body',
       type: 'array',
       of: [{type: 'block'}, {type: 'image'}],
+      validation: (Rule) => Rule.required().error('A testimonial is required.'),
+    }),
+    defineField({
+      name: 'author',
+      title: 'Author',
+      type: 'string',
+    }),
+    defineField({
+      name: 'credentials',
+      title: 'Author Credentials',
+      type: 'string',
     }),
     defineField({
       name: 'link',
@@ -29,7 +40,8 @@ export const heroType = defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required().error('Hero image is required.'),
+      validation: (Rule) => Rule.required().error('Testimonial image is required.'),
+
     }),
   ],
 })
