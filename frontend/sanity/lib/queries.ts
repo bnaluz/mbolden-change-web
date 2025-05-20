@@ -109,4 +109,3 @@ export const HEADER_QUERY = defineQuery(`*[_type == 'header'][0]{
   slug,}}
   }
   }`);
-
