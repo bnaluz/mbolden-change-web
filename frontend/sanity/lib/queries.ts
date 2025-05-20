@@ -9,7 +9,52 @@ export const PAGE_QUERY = defineQuery(
     title,
     slug,
     content[]{
-      ...,}
+      ...,
+    link {
+      title,
+      isExternalLink,
+      url,
+      target,
+      reference->{
+      _type,
+      slug
+    }},
+      _type == "heroCarousel" => {
+      ...,
+      slides[]{
+      ...,
+      link {
+      title,
+      isExternalLink,
+      url,
+      target,
+      reference->{
+      _type,
+      slug
+    }}}},
+      _type == "testimonialsCarousel" => {
+      ...,
+      link {
+      title,
+      isExternalLink,
+      url,
+      target,
+      reference->{
+      _type,
+      slug
+    }},
+      slides[]{
+      ...,
+      link {
+      title,
+      isExternalLink,
+      url,
+      target,
+      reference->{
+      _type,
+      slug
+      }}}}
+      }
     }`
 );
 
@@ -34,6 +79,18 @@ export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   secondaryLogo,
   organizationInfo,
   }`);
+
+
+export const PillarContainer_Query = defineQuery(`*[_type == "pillarContainer"][0]{
+  title,
+  description,
+  pillars[]->{
+    _id,
+    image,
+    headline,
+    description
+  }
+}`);
 
 export const HEADER_QUERY = defineQuery(`*[_type == 'header'][0]{
   ...,
