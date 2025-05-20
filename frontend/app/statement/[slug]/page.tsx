@@ -8,9 +8,9 @@ import styles from './page.module.css';
 export default async function StatementPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const statement = await getStatement(params.slug);
+  const statement = await getStatement((await params).slug);
 
   if (!statement) {
     return <div>Statement not found</div>;
