@@ -24,7 +24,23 @@ export const statementBannerType = defineType({
     defineField({
       name: 'cta',
       title: 'Call to Action',
-      type: 'internalOrExternalLink',
+      type: 'object',
+      fields: [
+        {
+          name: 'label',
+          title: 'Button text',
+          type: 'string',
+          initialValue: 'Read Full Statement',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'statement',
+          title: 'Statement to link',
+          type: 'reference',
+          to: [{type: 'statement'}],
+          validation: (Rule) => Rule.required(),
+        },
+      ],
     }),
     defineField({
       name: 'backgroundColor',
@@ -57,3 +73,5 @@ export const statementBannerType = defineType({
     }),
   ],
 })
+
+//TODO: Changing of the cta to be an object, with a reference to the statement document, also need to render a statement docuement page, statement/slug route.

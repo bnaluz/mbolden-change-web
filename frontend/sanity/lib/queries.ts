@@ -1,7 +1,7 @@
 import { defineQuery } from 'next-sanity';
 
-export const PAGE_QUERY = defineQuery(
-  `*[_type == "page" && slug.current == $slug][0]{
+export const PAGE_QUERY = defineQuery(`
+  *[_type == "page" && slug.current == $slug][0]{
     _id,
     _type,
     _createdAt,
@@ -9,9 +9,19 @@ export const PAGE_QUERY = defineQuery(
     title,
     slug,
     content[]{
-      ...,}
-    }`
-);
+      ...,
+      _type == "statementBanner" => {
+        ...,
+        cta{
+          label,                    
+          statement->{
+            "slug": slug.current      
+          }
+        }
+      }
+    }
+  }
+`);
 
 export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   _id,
@@ -52,3 +62,20 @@ export const HEADER_QUERY = defineQuery(`*[_type == 'header'][0]{
   slug,}}
   }
   }`);
+
+export const STATEMENT_QUERY = defineQuery(`
+  *[_type == "statement" && slug.current == $slug][0]{
+    _id,
+    _type,
+    _createdAt,
+    _updatedAt,
+    title,
+    date,
+    "slug": slug.current,
+    text,
+    pdfDownload{
+      "url": asset->url,
+      originalFilename
+    }
+  }
+`);
