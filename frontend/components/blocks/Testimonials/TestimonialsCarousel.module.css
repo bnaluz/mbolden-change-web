@@ -31,7 +31,6 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    /* max-width: 1440px; */
 }
 .emblaContainer {
     display: flex;

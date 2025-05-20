@@ -944,6 +944,13 @@
           },
           "optional": true
         },
+        "hasButton": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        },
         "link": {
           "type": "objectAttribute",
           "value": {
@@ -1308,6 +1315,13 @@
                 }
               ]
             }
+          },
+          "optional": true
+        },
+        "hasButton": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
           },
           "optional": true
         },
@@ -2471,6 +2485,13 @@
                 }
               ]
             }
+          },
+          "optional": true
+        },
+        "hasButton": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
           },
           "optional": true
         },

@@ -7,7 +7,7 @@ import ButtonComponent from '../../atoms/ButtonComponent';
 import styles from './Hero.module.css';
 
 
-export default function Hero({ title, text, image, link }: HeroType) {
+export default function Hero({ title, text, image, link, hasButton }: HeroType) {
   return (
     <section className={styles.heroSection}>
       <div className={styles.imageWrapper}>
@@ -22,14 +22,13 @@ export default function Hero({ title, text, image, link }: HeroType) {
               <PortableTextComponent value={text as PortableTextBlock[]} />
             </div>
           )}
-          {link?.title &&
-            (link.isExternalLink ? link.url : link.reference) && (
+            {hasButton && link &&
               <ButtonComponent
                 className={styles.button}
                 variant="primary"
                 link={link}
               />
-            )}
+            }
         </div>
       </div>
     </section>

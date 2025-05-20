@@ -142,6 +142,7 @@ export type TestimonialCard = {
   }>;
   author?: string;
   credentials?: string;
+  hasButton?: boolean;
   link?: InternalOrExternalLink;
   image: {
     asset?: {
@@ -191,6 +192,7 @@ export type TestimonialsCarousel = {
     _type: "image";
     _key: string;
   }>;
+  hasButton?: boolean;
   link?: InternalOrExternalLink;
   slides?: Array<{
     _key: string;
@@ -334,6 +336,7 @@ export type Hero = {
     _type: "image";
     _key: string;
   }>;
+  hasButton?: boolean;
   link?: InternalOrExternalLink;
   image: {
     asset?: {
