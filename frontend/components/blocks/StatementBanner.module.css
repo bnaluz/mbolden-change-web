@@ -1,0 +1,54 @@
+.banner {
+  width: 100vw;
+  position: relative;
+  box-sizing: border-box;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.banner-content {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.headline {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 auto 1.25rem;
+}
+
+.body {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0 auto 1.75rem;
+  white-space: pre-line;
+}
+
+.cta {
+  position: relative;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.cta:hover::after,
+.cta:focus-visible::after {
+  transform: scaleX(1);
+}

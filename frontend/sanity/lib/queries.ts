@@ -1,62 +1,65 @@
 import { defineQuery } from 'next-sanity';
 
-export const PAGE_QUERY = defineQuery(
-  `*[_type == "page" && slug.current == $slug][0]{
-    _id,
-    _type,
-    _createdAt,
-    _updatedAt,
-    title,
-    slug,
-    content[]{
+export const PAGE_QUERY = defineQuery(`
+*[_type == "page" && slug.current == $slug][0]{
+  _id,
+  _type,
+  _createdAt,
+  _updatedAt,
+  title,
+  slug,
+  content[]{
+    ...,
+    _type == "statementBanner" => {
       ...,
-    link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-    }},
-      _type == "heroCarousel" => {
-      ...,
-      slides[]{
-      ...,
-      link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-    }}}},
-      _type == "testimonialsCarousel" => {
-      ...,
-      link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-    }},
-      slides[]{
-      ...,
-      link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-      }}}}
+      cta{
+        label,
+        statement->{ "slug": slug.current }
+      },
+      link{
+        title,
+        isExternalLink,
+        url,
+        target,
+        reference->{ _type, slug }
       }
-    }`
-);
+    },
+    _type == "heroCarousel" => {
+      ...,
+      slides[]{
+        ...,
+        link{
+          title,
+          isExternalLink,
+          url,
+          target,
+          reference->{ _type, slug }
+        }
+      }
+    },
+    _type == "testimonialsCarousel" => {
+      ...,
+      link{
+        title,
+        isExternalLink,
+        url,
+        target,
+        reference->{ _type, slug }
+      },
+      slides[]{
+        ...,
+        link{
+          title,
+          isExternalLink,
+          url,
+          target,
+          reference->{ _type, slug }
+        }
+      }
+    }
+  }
+}
+`);
 
 export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   _id,
@@ -80,8 +83,8 @@ export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   organizationInfo,
   }`);
 
-
-export const PillarContainer_Query = defineQuery(`*[_type == "pillarContainer"][0]{
+export const PillarContainer_Query =
+  defineQuery(`*[_type == "pillarContainer"][0]{
   title,
   description,
   pillars[]->{
@@ -109,3 +112,20 @@ export const HEADER_QUERY = defineQuery(`*[_type == 'header'][0]{
   slug,}}
   }
   }`);
+
+export const STATEMENT_QUERY = defineQuery(`
+  *[_type == "statement" && slug.current == $slug][0]{
+    _id,
+    _type,
+    _createdAt,
+    _updatedAt,
+    title,
+    date,
+    "slug": slug.current,
+    text,
+    pdfDownload{
+      "url": asset->url,
+      originalFilename
+    }
+  }
+`);
