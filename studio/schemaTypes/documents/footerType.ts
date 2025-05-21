@@ -78,6 +78,7 @@ export const footertype = defineField({
                   {title: 'X (formerly Twitter)', value: 'x'},
                   {title: 'LinkedIn', value: 'linkedin'},
                   {title: 'Youtube', value: 'youtube'},
+                  {title: 'BlueSky', value: 'bluesky'},
                 ],
                 layout: 'dropdown',
               },
