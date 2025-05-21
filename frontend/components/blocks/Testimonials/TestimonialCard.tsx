@@ -65,7 +65,7 @@ export default function TestimonialCard({ title, text, author, credentials, imag
               </div>
             )}
 
-            {link && (
+            {hasButton && link && (
               <ButtonComponent
                 className={styles.button}
                 variant="secondary"

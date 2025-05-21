@@ -44,7 +44,7 @@ export const testimonialCardType = defineType({
           return 'A button link is required if "Display Button?" is checked.';
           }
           return true;
-          }),
+          }).optional(),
       }),
     defineField({
       name: 'image',

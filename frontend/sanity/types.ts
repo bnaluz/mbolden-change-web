@@ -271,6 +271,7 @@ export type FiftyFifty = {
 
 export type RichText = {
   _type: "richText";
+  title?: string;
   text?: Array<{
     children?: Array<{
       marks?: Array<string>;
