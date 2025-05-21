@@ -34,6 +34,18 @@
     padding: 32px;
 }
 
+@media (min-width: 769px) {
+  .videoWrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-75%);
+  margin-top: 32px;
+  margin-bottom: 32px;
+  width: 100%;
+  }
+}
+
+
   @media (max-width: 768px) {
     
     .desktopView {
@@ -53,4 +65,15 @@
     order: 2;
   }
 
+  }
+
+  .videoWrapper {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
   }

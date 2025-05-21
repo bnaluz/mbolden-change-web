@@ -199,8 +199,11 @@ export type TestimonialsCarousel = {
 
 export type FiftyFifty = {
   _type: "fiftyFifty";
+  mediaType?: "image" | "video";
   leftOrRightImage?: "left" | "right";
   mobileLayout?: "imageTop" | "textTop";
+  leftVideoUrl?: string;
+  rightVideoUrl?: string;
   rightImage?: {
     asset?: {
       _ref: string;

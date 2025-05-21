@@ -1357,6 +1357,23 @@
             "value": "fiftyFifty"
           }
         },
+        "mediaType": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "image"
+              },
+              {
+                "type": "string",
+                "value": "video"
+              }
+            ]
+          },
+          "optional": true
+        },
         "leftOrRightImage": {
           "type": "objectAttribute",
           "value": {
@@ -1388,6 +1405,20 @@
                 "value": "textTop"
               }
             ]
+          },
+          "optional": true
+        },
+        "leftVideoUrl": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "rightVideoUrl": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
           },
           "optional": true
         },

@@ -14,10 +14,29 @@ export default function FiftyFifty({
     leftImage,
     rightTitle,
     rightText,
-    rightImage
+    rightImage,
+    leftVideoUrl,
+    rightVideoUrl,
+    mediaType
 }: FiftyFiftyType) {
     const isImageOnTop = mobileLayout === 'imageTop'
-   
+
+    const getGoogleDriveUrl = (url: string) => {
+      if (!url) return '';
+      const fileId = url.split('/')[5];
+      return `https://drive.google.com/file/d/${fileId}/preview`;
+    }
+
+    const VideoPlayer = ({ url, title }: { url: string, title: string }) => (
+      <div className={styles.videoWrapper}>
+        <iframe
+        src={getGoogleDriveUrl(url)}
+        className={styles.video}
+        title={title}
+      />
+      </div>
+    )
+
     return (
         <section className={styles.section}>
 
@@ -25,25 +44,29 @@ export default function FiftyFifty({
       <div className={styles.desktopView}>
 
       <Grid>
-        <GridItem desktopSpan={6}>
-            {leftImage && (
-                <div className={styles.imageWrapper}>
-                    <SanityNextImage image={leftImage} fit="cover" />
-                </div>
-            )}
-            {leftTitle && <Headline tag='h2' text={leftTitle} />}
-            {leftText && <PortableTextComponent value={leftText as PortableTextBlock[]} />} 
-        </GridItem>
+      <GridItem desktopSpan={6}>
+                {mediaType === 'video' && leftVideoUrl 
+                  ? <VideoPlayer url={leftVideoUrl} title="Left Google Drive Video" />
+                  : leftImage 
+                  ? <div className={styles.imageWrapper}>
+                      <SanityNextImage image={leftImage} fit="cover" />
+                    </div>
+                  : null}
+                {leftTitle && <Headline tag='h2' text={leftTitle} />}
+                {leftText && <PortableTextComponent value={leftText as PortableTextBlock[]} />} 
+              </GridItem>
             
-        <GridItem desktopSpan={6}>
-        {rightImage && (
-          <div className={styles.imageWrapper}>
-            <SanityNextImage image={rightImage} fit="cover" />
-          </div>
-        )}
-        {rightTitle && <Headline tag='h2' text={rightTitle} />}
-        {rightText && <PortableTextComponent value={rightText as PortableTextBlock[]} />}
-        </GridItem>
+              <GridItem desktopSpan={6}>
+                {mediaType === 'video' && rightVideoUrl 
+                  ? <VideoPlayer url={rightVideoUrl} title="Left Google Drive Video" />
+                  : rightImage 
+                  ? <div className={styles.imageWrapper}>
+                      <SanityNextImage image={rightImage} fit="cover" />
+                    </div>
+                  : null}
+                {rightTitle && <Headline tag='h2' text={rightTitle} />}
+                {rightText && <PortableTextComponent value={rightText as PortableTextBlock[]} />} 
+              </GridItem>
       </Grid>
       </div>
       
@@ -54,16 +77,20 @@ export default function FiftyFifty({
           {isImageOnTop ? (
             <>
               <div className={styles.fiftyFiftyMobileImageContainer}>
-                {leftImage && (
-                  <div className={styles.imageWrapper}>
+                {mediaType === 'video' && leftVideoUrl
+                ? <VideoPlayer url={leftVideoUrl} title="Left Mobile Video" />
+                : leftImage 
+                ?  <div className={styles.imageWrapper}>
                     <SanityNextImage image={leftImage} fit="cover" />
                   </div>
-                )}
-                {rightImage && (
-                  <div className={styles.imageWrapper}>
+                : null}
+                {mediaType === 'video' && rightVideoUrl
+                ? <VideoPlayer url={rightVideoUrl} title="Right Mobile Video" />
+                : rightImage
+                ? <div className={styles.imageWrapper}>
                     <SanityNextImage image={rightImage} fit="cover" />
                   </div>
-                )}
+                : null}
               </div>
             
               <div className={styles.fiftyFiftyMobileTextContainer}>
@@ -83,16 +110,20 @@ export default function FiftyFifty({
               </div>
               
               <div className={styles.fiftyFiftyMobileImageContainer}>
-                {leftImage && (
-                  <div className={styles.imageWrapper}>
+                {mediaType === 'video' && leftVideoUrl
+                ? <VideoPlayer url={leftVideoUrl} title="Left Mobile Video" />
+                : leftImage 
+                ?  <div className={styles.imageWrapper}>
                     <SanityNextImage image={leftImage} fit="cover" />
                   </div>
-                )}
-                {rightImage && (
-                  <div className={styles.imageWrapper}>
+                : null}
+                {mediaType === 'video' && rightVideoUrl
+                ? <VideoPlayer url={rightVideoUrl} title="Right Mobile Video" />
+                : rightImage
+                ? <div className={styles.imageWrapper}>
                     <SanityNextImage image={rightImage} fit="cover" />
                   </div>
-                )}
+                : null}
               </div>
             </>
           )}

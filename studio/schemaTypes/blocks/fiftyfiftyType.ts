@@ -6,12 +6,39 @@ export const fiftyfiftyType = defineType({
     type: 'object',
     fields: [
         defineField({
-            name: 'leftOrRightImage',
+            name: 'mediaType',
+            title: 'Media Type',
             type: 'string',
             options: {
                 list: [
-                    { title: 'Image Left', value: 'left' },
-                    { title: 'Image Right', value: 'right' },
+                    { title: 'Image', value: 'image' },
+                    { title: 'Video', value: 'video' },
+                ],
+                layout: 'radio'
+            },
+            validation: (Rule) =>
+                Rule.custom((value, context) => {
+                    const parent = context.parent as any;
+                    
+                    if (value === 'image' && (parent?.leftVideoUrl || parent?.rightVideoUrl)) {
+                        return 'To display Image, please delete video URL fields.';
+                    }
+                    
+                    if (value === 'video' && (parent?.leftImage || parent?.rightImage)) {
+                        return 'To display Video, please clear image fields.';
+                    }
+                    
+                    return true;
+                })
+        }),
+        defineField({
+            name: 'leftOrRightImage',
+            title: 'Media Position',
+            type: 'string',
+            options: {
+                list: [
+                    { title: 'Media Left', value: 'left' },
+                    { title: 'Media Right', value: 'right' },
                 ],
                 layout: 'radio',
             },
@@ -22,11 +49,49 @@ export const fiftyfiftyType = defineType({
             type: 'string',
             options: {
                 list: [
-                    { title: 'Image on Top', value: 'imageTop' },
+                    { title: 'Media on Top', value: 'imageTop' },
                     { title: 'Text on Top', value: 'textTop'},
                 ],
                 layout: 'radio',
             },
+        }),
+        defineField({
+            name: 'leftVideoUrl',
+            title: 'Left Video URL',
+            type: 'url',
+            hidden: ({ parent }) => parent?.mediaType !== 'video' || parent?.leftOrRightImage !== 'left',
+            validation: (Rule) =>
+                Rule.custom((value, context) => {
+                    const parent = context.parent as any;
+
+                    if (parent?.mediaType !== 'video' || parent?.leftOrRightImage !== 'left') {
+                        return true;
+                    }
+                        
+                    if (value && parent?.rightVideoUrl) {
+                        return 'Cannot have both left and right video URLs - please remove one';
+                    }
+                    return true;
+                })
+        }),
+        defineField({
+            name: 'rightVideoUrl',
+            title: 'Right Video URL',
+            type: 'url',
+            hidden: ({ parent }) => parent?.mediaType !== 'video' || parent?.leftOrRightImage!== 'right',
+            validation: (Rule) =>
+                Rule.custom((value, context) => {
+                    const parent = context.parent as any;
+
+                    if (parent?.mediaType !== 'video' || parent?.leftOrRightImage !== 'right') {
+                        return true;
+                    }
+                        
+                    if (value && parent?.leftVideoUrl) {
+                        return 'Cannot have both left and right video URLs - please remove one';
+                    }
+                    return true;
+                })
         }),
         defineField({
             name: 'rightImage',
@@ -36,7 +101,7 @@ export const fiftyfiftyType = defineType({
             options: {
                 hotspot: true,
             },
-            hidden: ({ parent }) => parent?.leftOrRightImage !== 'right',
+            hidden: ({ parent }) => parent?.leftOrRightImage !== 'right'  || parent?.mediaType !== 'image',
         }),
         defineField({
             name: 'leftImage',
@@ -46,7 +111,7 @@ export const fiftyfiftyType = defineType({
             options: {
                 hotspot: true,
             },
-            hidden: ({ parent }) => parent?.leftOrRightImage !== 'left'
+            hidden: ({ parent }) => parent?.leftOrRightImage !== 'left'  || parent?.mediaType !== 'image',
         }),
         defineField({
             name: 'leftTitle',
