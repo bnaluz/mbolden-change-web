@@ -6,6 +6,8 @@
   --brand-aqua-teal: #0091ad;
   --brand-fuchsia: #b22f93;
   --brand-creamy-beige: #f8efe0;
+
+  --brand-creamy-beige-rgb: 248 239 224; /*  (f8 ef e0) in decimal  */
 }
 
 html,
@@ -13,11 +15,16 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: rgb(var(--brand-creamy-beige-rgb) / 0.2);
 }
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+* {
+  margin: 0;
 }
 
 body {
@@ -32,4 +39,59 @@ h5,
 h6 {
   font-family: var(--font-headline), Arial, Helvetica, sans-serif;
   font-weight: 700;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+}
+h2 {
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+}
+h3 {
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+}
+h4 {
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+}
+h5 {
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+}
+h6 {
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }

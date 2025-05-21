@@ -1,0 +1,65 @@
+.container {
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.description {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: var(--font-body);
+}
+
+
+.card {
+  background: var(--brand-white);
+  border: 1px solid var(--brand-fuchsia);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px var(--brand-light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--brand-light-gray);
+}
+
+.cardImage {
+  width: 50%;
+  justify-self: center;
+  max-width: 240px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px var(--brand-light-gray);
+  transition: transform 0.2s ease;
+}
+
+
+.cardImage:hover {
+  transform: scale(1.03);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+}
+
+@media (max-width:1150px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
