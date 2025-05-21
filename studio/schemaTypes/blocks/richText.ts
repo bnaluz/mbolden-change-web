@@ -6,6 +6,11 @@ export const richText = defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Headline',
+      type: 'string',
+    }),
+    defineField({
       name: 'text',
       title: 'Text',
       type: 'array',

@@ -18,10 +18,11 @@ type TestimonialsCarouselProps = {
     title?: string;
     text?: PortableTextBlock[];
     link?: InternalOrExternalLink;
+    hasButton?: boolean;
     slides: SlideWithKey[];
 };
 
-export default function TestimonialsCarousel({ title, text, link, slides }: TestimonialsCarouselProps) {
+export default function TestimonialsCarousel({ title, text, link, hasButton, slides }: TestimonialsCarouselProps) {
     const autoplay = useRef(Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true  }));
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
@@ -30,7 +31,7 @@ export default function TestimonialsCarousel({ title, text, link, slides }: Test
             <section className={styles.sectionHeader}>
                 {title && <Headline tag="h1" text={title} className={styles.headline} />}
                 {text && <PortableTextComponent value={text as PortableTextBlock[]} />}
-                {link && <ButtonComponent variant="secondary" link={link} />}
+                {hasButton && link && <ButtonComponent variant="secondary" link={link} />}
 
             </section>
 

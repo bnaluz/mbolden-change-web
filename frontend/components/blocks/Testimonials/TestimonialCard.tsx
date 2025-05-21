@@ -9,7 +9,7 @@ import GridItem from '@/components/GridItem';
 import styles from './TestimonialCard.module.css';
 
 
-export default function TestimonialCard({ title, text, author, credentials, image, link }: TestimonialCardType) {
+export default function TestimonialCard({ title, text, author, credentials, image, link, hasButton }: TestimonialCardType) {
   return (
     <section>
 
@@ -36,14 +36,14 @@ export default function TestimonialCard({ title, text, author, credentials, imag
                 </div>
               )}
 
-              {link &&
-                (
+              {hasButton && link && (
+                <div className={styles.buttonWrapper}>
                   <ButtonComponent
-                  className={styles.button}
-                  variant="secondary"
-                  link={link}
-                  >
-                  </ButtonComponent>
+                    className={styles.button}
+                    variant="secondary"
+                    link={link}
+                  />
+                </div>
                 )}
             </div>
           </GridItem>
@@ -61,11 +61,11 @@ export default function TestimonialCard({ title, text, author, credentials, imag
               <div className={styles.pText}>
                 <PortableTextComponent value={text as PortableTextBlock[]} />
                 {author && <Headline tag="h4" text={author} className={styles.author} />}
-                {credentials && <Headline tag="h5" text={credentials} className={styles.author} />}
+                {credentials && <Headline tag="h5" text={credentials} className={styles.credentials} />}
               </div>
             )}
 
-            {link && (
+            {hasButton && link && (
               <ButtonComponent
                 className={styles.button}
                 variant="secondary"

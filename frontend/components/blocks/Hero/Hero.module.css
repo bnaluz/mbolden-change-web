@@ -1,6 +1,6 @@
 .heroSection {
     width: 100%;
-    max-height: 800px;
+    /* max-height: 800px; */
     position: relative;
     overflow:hidden;
     margin: 0;
@@ -9,7 +9,7 @@
 
 .imageWrapper {
     position: relative;
-    max-height: 800px;
+    /* max-height: 800px; */
     /* display: grid; */
     width: 100%;
     height: auto;
@@ -29,8 +29,7 @@
 .heroImage {
     width: 100%;
     height: 100%;
-    max-height: 800px;
-    /* min-height: 700px; */
+    max-height: 70vh;
     object-fit: cover;
 }
 
@@ -43,7 +42,6 @@
     z-index: 2;
     color: var(--brand-white);
     width: 100%;
-    /* max-width: 700px; */
 }
 .headline {
     font-size: 5rem;
@@ -58,6 +56,7 @@
 
 .button {
     max-width: 200px;
+    margin-top: 1rem;
 }
 
 .carouselWrapper {
@@ -68,7 +67,6 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    /* max-width: 1440px; */
 }
 .emblaContainer {
     display: flex;
