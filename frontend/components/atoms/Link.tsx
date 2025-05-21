@@ -40,7 +40,7 @@ export const LinkAtom = ({
   }
 
   return (
-    <Link href={reference?.slug.current!} aria-label={ariaLabel}>
+    <Link href={`/${reference?.slug.current}`} aria-label={ariaLabel}>
       {linkContent}
     </Link>
   );
