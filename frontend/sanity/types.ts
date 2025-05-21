@@ -14,7 +14,7 @@
 
 // Source: schema.json
 export type SanityImagePaletteSwatch = {
-  _type: "sanity.imagePaletteSwatch";
+  _type: 'sanity.imagePaletteSwatch';
   background?: string;
   foreground?: string;
   population?: number;
@@ -22,7 +22,7 @@ export type SanityImagePaletteSwatch = {
 };
 
 export type SanityImagePalette = {
-  _type: "sanity.imagePalette";
+  _type: 'sanity.imagePalette';
   darkMuted?: SanityImagePaletteSwatch;
   lightVibrant?: SanityImagePaletteSwatch;
   darkVibrant?: SanityImagePaletteSwatch;
@@ -33,95 +33,122 @@ export type SanityImagePalette = {
 };
 
 export type SanityImageDimensions = {
-  _type: "sanity.imageDimensions";
+  _type: 'sanity.imageDimensions';
   height?: number;
   width?: number;
   aspectRatio?: number;
 };
 
 export type Geopoint = {
-  _type: "geopoint";
+  _type: 'geopoint';
   lat?: number;
   lng?: number;
   alt?: number;
 };
 
-export type PageBuilder = Array<{
-  _key: string;
-} & Hero | {
-  _key: string;
-} & RichText | {
-  _key: string;
-} & FiftyFifty | {
-  _key: string;
-} & StatementBanner | {
-  _key: string;
-} & HeroCarousel | {
-  title?: string;
-  description?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
+export type PageBuilder = Array<
+  | ({
       _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
+    } & Hero)
+  | ({
       _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  pillars?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "pillarCard";
-  }>;
-  _type: "pillarContainer";
-  _key: string;
-} | {
-  _key: string;
-} & TestimonialsCarousel>;
+    } & RichText)
+  | ({
+      _key: string;
+    } & FiftyFifty)
+  | ({
+      _key: string;
+    } & StatementBanner)
+  | ({
+      _key: string;
+    } & HeroCarousel)
+  | {
+      title?: string;
+      description?: Array<{
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?:
+          | 'normal'
+          | 'h1'
+          | 'h2'
+          | 'h3'
+          | 'h4'
+          | 'h5'
+          | 'h6'
+          | 'blockquote';
+        listItem?: 'bullet' | 'number';
+        markDefs?: Array<{
+          href?: string;
+          _type: 'link';
+          _key: string;
+        }>;
+        level?: number;
+        _type: 'block';
+        _key: string;
+      }>;
+      pillars?: Array<{
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: 'pillarCard';
+      }>;
+      _type: 'pillarContainer';
+      _key: string;
+    }
+  | ({
+      _key: string;
+    } & TestimonialsCarousel)
+>;
 
 export type TestimonialCard = {
-  _type: "testimonialCard";
+  _type: 'testimonialCard';
   title?: string;
-  text: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  } | {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-    _key: string;
-  }>;
+  text: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?:
+          | 'normal'
+          | 'h1'
+          | 'h2'
+          | 'h3'
+          | 'h4'
+          | 'h5'
+          | 'h6'
+          | 'blockquote';
+        listItem?: 'bullet' | 'number';
+        markDefs?: Array<{
+          href?: string;
+          _type: 'link';
+          _key: string;
+        }>;
+        level?: number;
+        _type: 'block';
+        _key: string;
+      }
+    | {
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: 'image';
+        _key: string;
+      }
+  >;
   author?: string;
   credentials?: string;
   hasButton?: boolean;
@@ -129,20 +156,20 @@ export type TestimonialCard = {
   image: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
 };
 
 export type TestimonialsCarousel = {
-  _type: "testimonialsCarousel";
+  _type: 'testimonialsCarousel';
   title?: string;
   text?: Array<{
     children?: Array<{
@@ -176,13 +203,15 @@ export type TestimonialsCarousel = {
   }>;
   hasButton?: boolean;
   link?: InternalOrExternalLink;
-  slides?: Array<{
-    _key: string;
-  } & TestimonialCard>;
+  slides?: Array<
+    {
+      _key: string;
+    } & TestimonialCard
+  >;
 };
 
 export type StatementBanner = {
-  _type: "statementBanner";
+  _type: 'statementBanner';
   title?: string;
   headline?: string;
   body?: string;
@@ -190,62 +219,69 @@ export type StatementBanner = {
     label: string;
     statement: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "statement";
+      [internalGroqTypeReferenceTo]?: 'statement';
     };
   };
-  backgroundColor?: "var(--brand-warm-yellow)" | "var(--brand-aqua-teal)" | "var(--brand-fuchsia)" | "var(--brand-black)" | "var(--brand-white)" | "var(--brand-light-gray)" | "var(--brand-creamy-beige)";
-  textColor?: "var(--brand-white)" | "var(--brand-black)";
+  backgroundColor?:
+    | 'var(--brand-warm-yellow)'
+    | 'var(--brand-aqua-teal)'
+    | 'var(--brand-fuchsia)'
+    | 'var(--brand-black)'
+    | 'var(--brand-white)'
+    | 'var(--brand-light-gray)'
+    | 'var(--brand-creamy-beige)';
+  textColor?: 'var(--brand-white)' | 'var(--brand-black)';
 };
 
 export type FiftyFifty = {
-  _type: "fiftyFifty";
-  leftOrRightImage?: "left" | "right";
-  mobileLayout?: "imageTop" | "textTop";
+  _type: 'fiftyFifty';
+  leftOrRightImage?: 'left' | 'right';
+  mobileLayout?: 'imageTop' | 'textTop';
   rightImage?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
   leftImage?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
   leftTitle?: string;
   leftText?: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
-      _type: "span";
+      _type: 'span';
       _key: string;
     }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote';
+    listItem?: 'bullet' | 'number';
     markDefs?: Array<{
       href?: string;
-      _type: "link";
+      _type: 'link';
       _key: string;
     }>;
     level?: number;
-    _type: "block";
+    _type: 'block';
     _key: string;
   }>;
   rightTitle?: string;
@@ -253,18 +289,18 @@ export type FiftyFifty = {
     children?: Array<{
       marks?: Array<string>;
       text?: string;
-      _type: "span";
+      _type: 'span';
       _key: string;
     }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote';
+    listItem?: 'bullet' | 'number';
     markDefs?: Array<{
       href?: string;
-      _type: "link";
+      _type: 'link';
       _key: string;
     }>;
     level?: number;
-    _type: "block";
+    _type: 'block';
     _key: string;
   }>;
 };
@@ -305,7 +341,7 @@ export type RichText = {
 };
 
 export type Hero = {
-  _type: "hero";
+  _type: 'hero';
   title?: string;
   text?: Array<{
     children?: Array<{
@@ -342,28 +378,30 @@ export type Hero = {
   image: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
 };
 
 export type HeroCarousel = {
-  _type: "heroCarousel";
-  slides?: Array<{
-    _key: string;
-  } & Hero>;
+  _type: 'heroCarousel';
+  slides?: Array<
+    {
+      _key: string;
+    } & Hero
+  >;
 };
 
 export type Header = {
   _id: string;
-  _type: "header";
+  _type: 'header';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -371,19 +409,21 @@ export type Header = {
   logo: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
-  navigationLinks?: Array<{
-    _key: string;
-  } & InternalOrExternalLink>;
+  navigationLinks?: Array<
+    {
+      _key: string;
+    } & InternalOrExternalLink
+  >;
   donateCTA?: {
     text?: string;
     buttonLink?: InternalOrExternalLink;
@@ -391,67 +431,69 @@ export type Header = {
 };
 
 export type InternalOrExternalLink = {
-  _type: "internalOrExternalLink";
+  _type: 'internalOrExternalLink';
   title?: string;
   isExternalLink?: boolean;
   url?: string;
-  target?: "_self" | "_blank";
-  reference?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "page";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "statement";
-  };
+  target?: '_self' | '_blank';
+  reference?:
+    | {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'page';
+      }
+    | {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'statement';
+      };
 };
 
 export type PillarCard = {
   _id: string;
-  _type: "pillarCard";
+  _type: 'pillarCard';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
   image: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
   headline: string;
   description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
-      _type: "span";
+      _type: 'span';
       _key: string;
     }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote';
+    listItem?: 'bullet' | 'number';
     markDefs?: Array<{
       href?: string;
-      _type: "link";
+      _type: 'link';
       _key: string;
     }>;
     level?: number;
-    _type: "block";
+    _type: 'block';
     _key: string;
   }>;
 };
 
 export type PillarContainer = {
   _id: string;
-  _type: "pillarContainer";
+  _type: 'pillarContainer';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -460,32 +502,32 @@ export type PillarContainer = {
     children?: Array<{
       marks?: Array<string>;
       text?: string;
-      _type: "span";
+      _type: 'span';
       _key: string;
     }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote';
+    listItem?: 'bullet' | 'number';
     markDefs?: Array<{
       href?: string;
-      _type: "link";
+      _type: 'link';
       _key: string;
     }>;
     level?: number;
-    _type: "block";
+    _type: 'block';
     _key: string;
   }>;
   pillars?: Array<{
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
     _key: string;
-    [internalGroqTypeReferenceTo]?: "pillarCard";
+    [internalGroqTypeReferenceTo]?: 'pillarCard';
   }>;
 };
 
 export type Footer = {
   _id: string;
-  _type: "footer";
+  _type: 'footer';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -493,28 +535,36 @@ export type Footer = {
   primaryLogo?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
-    _type: "image";
+    _type: 'image';
   };
   columnCategories?: Array<{
     title: string;
-    links?: Array<{
-      _key: string;
-    } & InternalOrExternalLink>;
-    _type: "footerColumn";
+    links?: Array<
+      {
+        _key: string;
+      } & InternalOrExternalLink
+    >;
+    _type: 'footerColumn';
     _key: string;
   }>;
   socialLinks?: Array<{
-    platform?: "facebook" | "instagram" | "x" | "linkedin" | "youtube" | "bluesky";
+    platform?:
+      | 'facebook'
+      | 'instagram'
+      | 'x'
+      | 'linkedin'
+      | 'youtube'
+      | 'bluesky';
     url: string;
-    _type: "socialLink";
+    _type: 'socialLink';
     _key: string;
   }>;
   organizationInfo?: {
@@ -526,7 +576,7 @@ export type Footer = {
 
 export type Page = {
   _id: string;
-  _type: "page";
+  _type: 'page';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -537,7 +587,7 @@ export type Page = {
 
 export type Statement = {
   _id: string;
-  _type: "statement";
+  _type: 'statement';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -547,48 +597,59 @@ export type Statement = {
   pdfDownload?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.fileAsset';
     };
     media?: unknown;
-    _type: "file";
+    _type: 'file';
   };
-  text?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  } | {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-    _key: string;
-  }>;
+  text?: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?:
+          | 'normal'
+          | 'h1'
+          | 'h2'
+          | 'h3'
+          | 'h4'
+          | 'h5'
+          | 'h6'
+          | 'blockquote';
+        listItem?: 'bullet' | 'number';
+        markDefs?: Array<{
+          href?: string;
+          _type: 'link';
+          _key: string;
+        }>;
+        level?: number;
+        _type: 'block';
+        _key: string;
+      }
+    | {
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: 'image';
+        _key: string;
+      }
+  >;
 };
 
 export type SanityFileAsset = {
   _id: string;
-  _type: "sanity.fileAsset";
+  _type: 'sanity.fileAsset';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -609,7 +670,7 @@ export type SanityFileAsset = {
 };
 
 export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
+  _type: 'sanity.imageCrop';
   top?: number;
   bottom?: number;
   left?: number;
@@ -617,7 +678,7 @@ export type SanityImageCrop = {
 };
 
 export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
+  _type: 'sanity.imageHotspot';
   x?: number;
   y?: number;
   height?: number;
@@ -626,7 +687,7 @@ export type SanityImageHotspot = {
 
 export type SanityImageAsset = {
   _id: string;
-  _type: "sanity.imageAsset";
+  _type: 'sanity.imageAsset';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -648,14 +709,14 @@ export type SanityImageAsset = {
 };
 
 export type SanityAssetSourceData = {
-  _type: "sanity.assetSourceData";
+  _type: 'sanity.assetSourceData';
   name?: string;
   id?: string;
   url?: string;
 };
 
 export type SanityImageMetadata = {
-  _type: "sanity.imageMetadata";
+  _type: 'sanity.imageMetadata';
   location?: Geopoint;
   dimensions?: SanityImageDimensions;
   palette?: SanityImagePalette;
@@ -666,10 +727,36 @@ export type SanityImageMetadata = {
 };
 
 export type Slug = {
-  _type: "slug";
+  _type: 'slug';
   current: string;
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | PageBuilder | TestimonialCard | TestimonialsCarousel | StatementBanner | FiftyFifty | RichText | Hero | HeroCarousel | Header | InternalOrExternalLink | PillarCard | PillarContainer | Footer | Page | Statement | SanityFileAsset | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes =
+  | SanityImagePaletteSwatch
+  | SanityImagePalette
+  | SanityImageDimensions
+  | Geopoint
+  | PageBuilder
+  | TestimonialCard
+  | TestimonialsCarousel
+  | StatementBanner
+  | FiftyFifty
+  | RichText
+  | Hero
+  | HeroCarousel
+  | Header
+  | InternalOrExternalLink
+  | PillarCard
+  | PillarContainer
+  | Footer
+  | Page
+  | Statement
+  | SanityFileAsset
+  | SanityImageCrop
+  | SanityImageHotspot
+  | SanityImageAsset
+  | SanityAssetSourceData
+  | SanityImageMetadata
+  | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
