@@ -27,13 +27,14 @@ export const heroType = defineType({
       title: 'Button Link',
       type: 'internalOrExternalLink',
       hidden: ({parent}) => !parent?.hasButton,
-      validation: (Rule) => Rule.custom((value, context) => {
-        const parent = context.parent as any;
-        if (parent?.hasButton && !value) {
-          return 'A button link is required if "Display Button?" is checked.';
-        }
-        return true;
-      }).optional(),
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          const parent = context.parent as any
+          if (parent?.hasButton && !value) {
+            return 'A button link is required if "Display Button?" is checked.'
+          }
+          return true
+        }).optional(),
     }),
     defineField({
       name: 'image',
