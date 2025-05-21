@@ -1,4 +1,4 @@
-'use client'; // lets us use state in the component
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -12,7 +12,7 @@ import styles from './Header.module.css';
 type HeaderProps = { headerData: HeaderType };
 
 export default function Header({ headerData }: HeaderProps) {
-  const [open, setOpen] = useState(false); /* NEW */
+  const [open, setOpen] = useState(false);
 
   return (
     <header className={styles.header}>
@@ -23,7 +23,6 @@ export default function Header({ headerData }: HeaderProps) {
             aria-label="main-navigation"
             className={styles.nav}
           >
-            {/* --- logo -------------------------------------------------- */}
             <Link href="/" className={styles.logo} aria-label="Home">
               {headerData.logo && (
                 <div className={styles.logoWrapper}>
@@ -34,7 +33,6 @@ export default function Header({ headerData }: HeaderProps) {
               )}
             </Link>
 
-            {/* --- hamburger button  (only shown on ≤767 px) ------------- */}
             <button
               className={styles.hamburger}
               aria-label="Toggle menu"
@@ -45,8 +43,6 @@ export default function Header({ headerData }: HeaderProps) {
               <span className={styles.bar} />
               <span className={styles.bar} />
             </button>
-
-            {/* --- link list  ------------------------------------------- */}
             <ul className={`${styles.linkList} ${open ? styles.open : ''}`}>
               {headerData.navigationLinks?.map((link, i) => (
                 <li key={i}>
@@ -65,8 +61,6 @@ export default function Header({ headerData }: HeaderProps) {
                   />
                 </li>
               ))}
-
-              {/* donate CTA keeps its angled styling */}
               {headerData.donateCTA && (
                 <li>
                   <LinkAtom

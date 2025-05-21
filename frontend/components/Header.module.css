@@ -10,7 +10,6 @@
   box-shadow: 0 1px 3px rgba(0 0 0 / 0.04);
 }
 
-/* ---------- grid-wrapper nav ---------- */
 .nav {
   display: flex;
   align-items: center;
@@ -18,13 +17,11 @@
   width: 100%;
 }
 
-/* ---------- logo ---------- */
 .logoWrapper {
   max-width: 160px;
   z-index: 999;
 }
 
-/* ---------- desktop / mobile link list ---------- */
 .linkList {
   display: flex;
   align-items: center;
@@ -35,7 +32,6 @@
   transition: transform 0.35s ease;
 }
 
-/* ---------- individual links ---------- */
 .headerLink {
   position: relative;
   display: inline-block;
@@ -63,7 +59,6 @@
   transform: scaleX(1);
 }
 
-/* ---------- donate CTA ---------- */
 .donateButton {
   position: relative;
   display: inline-block;
@@ -94,7 +89,6 @@
   transform: scaleX(1);
 }
 
-/* ---------- hamburger ---------- */
 .hamburger {
   --size: 24px;
   display: none;
@@ -118,7 +112,6 @@
     opacity 0.3s ease;
 }
 
-/* ---------- mobile adjustments ---------- */
 @media (max-width: 767px) {
   .hamburger {
     display: flex;
