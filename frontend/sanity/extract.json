@@ -209,7 +209,7 @@
             },
             "rest": {
               "type": "inline",
-              "name": "heroCarousel"
+              "name": "hero"
             }
           },
           {
@@ -225,6 +225,51 @@
             "rest": {
               "type": "inline",
               "name": "richText"
+            }
+          },
+          {
+            "type": "object",
+            "attributes": {
+              "_key": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "rest": {
+              "type": "inline",
+              "name": "fiftyFifty"
+            }
+          },
+          {
+            "type": "object",
+            "attributes": {
+              "_key": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "rest": {
+              "type": "inline",
+              "name": "statementBanner"
+            }
+          },
+          {
+            "type": "object",
+            "attributes": {
+              "_key": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "rest": {
+              "type": "inline",
+              "name": "heroCarousel"
             }
           },
           {
@@ -492,30 +537,6 @@
             },
             "rest": {
               "type": "inline",
-              "name": "fiftyFifty"
-            }
-          },
-          {
-            "type": "object",
-            "attributes": {
-              "_key": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                }
-              }
-            },
-            "rest": {
-              "type": "inline",
-              "name": "statementBanner"
-            }
-          }
-        ]
-      }
-    }
-  },
-  {
-    "name": "statementBanner",
               "name": "testimonialsCarousel"
             }
           }
@@ -533,7 +554,6 @@
           "type": "objectAttribute",
           "value": {
             "type": "string",
-            "value": "statementBanner"
             "value": "testimonialCard"
           }
         },
@@ -544,35 +564,6 @@
           },
           "optional": true
         },
-        "headline": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": true
-        },
-        "body": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": true
-        },
-        "cta": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "object",
-            "attributes": {
-              "label": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                },
-                "optional": true
-              },
-              "statement": {
-                "type": "objectAttribute",
-                "value": {
         "text": {
           "type": "objectAttribute",
           "value": {
@@ -886,15 +877,6 @@
                       "optional": true
                     }
                   },
-                  "dereferencesTo": "statement"
-                },
-                "optional": true
-              }
-            }
-          },
-          "optional": true
-        },
-        "backgroundColor": {
                   "dereferencesTo": "sanity.imageAsset"
                 },
                 "optional": true
@@ -1257,7 +1239,7 @@
     }
   },
   {
-    "name": "fiftyFifty",
+    "name": "statementBanner",
     "type": "type",
     "value": {
       "type": "object",
@@ -1266,58 +1248,43 @@
           "type": "objectAttribute",
           "value": {
             "type": "string",
-            "value": "fiftyFifty"
+            "value": "statementBanner"
           }
         },
-        "leftOrRightImage": {
+        "title": {
           "type": "objectAttribute",
           "value": {
-            "type": "union",
-            "of": [
-              {
-                "type": "string",
-                "value": "var(--brand-warm-yellow)"
-              },
-              {
-                "type": "string",
-                "value": "var(--brand-aqua-teal)"
-              },
-              {
-                "type": "string",
-                "value": "var(--brand-fuchsia)"
-                "value": "left"
-              },
-              {
-                "type": "string",
-                "value": "right"
-              }
-            ]
+            "type": "string"
           },
           "optional": true
         },
-        "mobileLayout": {
+        "headline": {
           "type": "objectAttribute",
           "value": {
-            "type": "union",
-            "of": [
-              {
-                "type": "string",
-                "value": "imageTop"
-              },
-              {
-                "type": "string",
-                "value": "textTop"
-              }
-            ]
+            "type": "string"
           },
           "optional": true
         },
-        "rightImage": {
+        "body": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "cta": {
           "type": "objectAttribute",
           "value": {
             "type": "object",
             "attributes": {
-              "asset": {
+              "label": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                },
+                "optional": false
+              },
+              "statement": {
                 "type": "objectAttribute",
                 "value": {
                   "type": "object",
@@ -1343,24 +1310,30 @@
                       "optional": true
                     }
                   },
-                  "dereferencesTo": "sanity.imageAsset"
+                  "dereferencesTo": "statement"
                 },
-                "optional": true
+                "optional": false
+              }
+            }
+          },
+          "optional": true
+        },
+        "backgroundColor": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "var(--brand-warm-yellow)"
               },
-              "media": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "unknown"
-                },
-                "optional": true
+              {
+                "type": "string",
+                "value": "var(--brand-aqua-teal)"
               },
-              "hotspot": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "inline",
-                  "name": "sanity.imageHotspot"
-                },
-                "optional": true
+              {
+                "type": "string",
+                "value": "var(--brand-fuchsia)"
               },
               {
                 "type": "string",
@@ -1414,13 +1387,6 @@
             "type": "string",
             "value": "fiftyFifty"
           }
-        },
-        "title": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": true
         },
         "leftOrRightImage": {
           "type": "objectAttribute",
@@ -2884,30 +2850,61 @@
         "reference": {
           "type": "objectAttribute",
           "value": {
-            "type": "object",
-            "attributes": {
-              "_ref": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                }
-              },
-              "_type": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string",
-                  "value": "reference"
-                }
-              },
-              "_weak": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "boolean"
+            "type": "union",
+            "of": [
+              {
+                "type": "object",
+                "attributes": {
+                  "_ref": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "_type": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string",
+                      "value": "reference"
+                    }
+                  },
+                  "_weak": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "boolean"
+                    },
+                    "optional": true
+                  }
                 },
-                "optional": true
+                "dereferencesTo": "page"
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_ref": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "_type": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string",
+                      "value": "reference"
+                    }
+                  },
+                  "_weak": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "boolean"
+                    },
+                    "optional": true
+                  }
+                },
+                "dereferencesTo": "statement"
               }
-            },
-            "dereferencesTo": "page"
+            ]
           },
           "optional": true
         }
@@ -3441,129 +3438,11 @@
           "of": {
             "type": "object",
             "attributes": {
-              "_key": {
               "_ref": {
                 "type": "objectAttribute",
                 "value": {
                   "type": "string"
                 }
-              }
-            },
-            "rest": {
-              "type": "inline",
-              "name": "internalOrExternalLink"
-            }
-          }
-        },
-        "optional": true
-      },
-      "donateCTA": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "object",
-          "attributes": {
-            "text": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "string"
-              },
-              "optional": true
-            },
-            "buttonLink": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "inline",
-                "name": "internalOrExternalLink"
-              },
-              "optional": true
-            }
-          }
-        },
-        "optional": true
-      }
-    }
-  },
-  {
-    "name": "internalOrExternalLink",
-    "type": "type",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "internalOrExternalLink"
-          }
-        },
-        "title": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": true
-        },
-        "isExternalLink": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "boolean"
-          },
-          "optional": true
-        },
-        "url": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": true
-        },
-        "target": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "union",
-            "of": [
-              {
-                "type": "string",
-                "value": "_self"
-              },
-              {
-                "type": "string",
-                "value": "_blank"
-              }
-            ]
-          },
-          "optional": true
-        },
-        "reference": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "union",
-            "of": [
-              {
-                "type": "object",
-                "attributes": {
-                  "_ref": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string"
-                    }
-                  },
-                  "_type": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string",
-                      "value": "reference"
-                    }
-                  },
-                  "_weak": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "boolean"
-                    },
-                    "optional": true
-                  }
-                },
-                "dereferencesTo": "page"
               },
               "_type": {
                 "type": "objectAttribute",
@@ -3572,36 +3451,13 @@
                   "value": "reference"
                 }
               },
-              {
-                "type": "object",
-                "attributes": {
-                  "_ref": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string"
-                    }
-                  },
-                  "_type": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string",
-                      "value": "reference"
-                    }
-                  },
-                  "_weak": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "boolean"
-                    },
-                    "optional": true
-                  }
+              "_weak": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "boolean"
                 },
-                "dereferencesTo": "statement"
+                "optional": true
               }
-            ]
-          },
-          "optional": true
-        }
             },
             "dereferencesTo": "pillarCard",
             "rest": {
@@ -4000,7 +3856,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "slug": {
         "type": "objectAttribute",
@@ -4008,14 +3864,14 @@
           "type": "inline",
           "name": "slug"
         },
-        "optional": true
+        "optional": false
       },
       "date": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "pdfDownload": {
         "type": "objectAttribute",

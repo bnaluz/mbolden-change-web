@@ -48,9 +48,15 @@ export type Geopoint = {
 
 export type PageBuilder = Array<{
   _key: string;
-} & HeroCarousel | {
+} & Hero | {
   _key: string;
 } & RichText | {
+  _key: string;
+} & FiftyFifty | {
+  _key: string;
+} & StatementBanner | {
+  _key: string;
+} & HeroCarousel | {
   title?: string;
   description?: Array<{
     children?: Array<{
@@ -81,28 +87,6 @@ export type PageBuilder = Array<{
   _key: string;
 } | {
   _key: string;
-} & FiftyFifty | {
-  _key: string;
-} & FiftyFifty | {
-  _key: string;
-} & StatementBanner>;
-
-export type StatementBanner = {
-  _type: "statementBanner";
-  title?: string;
-  headline?: string;
-  body?: string;
-  cta?: {
-    label?: string;
-    statement?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "statement";
-    };
-  };
-  backgroundColor?: "var(--brand-warm-yellow)" | "var(--brand-aqua-teal)" | "var(--brand-fuchsia)" | "var(--brand-black)" | "var(--brand-white)" | "var(--brand-light-gray)" | "var(--brand-creamy-beige)";
-  textColor?: "var(--brand-white)" | "var(--brand-black)";
 } & TestimonialsCarousel>;
 
 export type TestimonialCard = {
@@ -193,6 +177,24 @@ export type TestimonialsCarousel = {
   slides?: Array<{
     _key: string;
   } & TestimonialCard>;
+};
+
+export type StatementBanner = {
+  _type: "statementBanner";
+  title?: string;
+  headline?: string;
+  body?: string;
+  cta?: {
+    label: string;
+    statement: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "statement";
+    };
+  };
+  backgroundColor?: "var(--brand-warm-yellow)" | "var(--brand-aqua-teal)" | "var(--brand-fuchsia)" | "var(--brand-black)" | "var(--brand-white)" | "var(--brand-light-gray)" | "var(--brand-creamy-beige)";
+  textColor?: "var(--brand-white)" | "var(--brand-black)";
 };
 
 export type FiftyFifty = {
@@ -507,7 +509,7 @@ export type Footer = {
   }>;
   socialLinks?: Array<{
     platform?: "facebook" | "instagram" | "x" | "linkedin" | "youtube" | "bluesky";
-    url?: string;
+    url: string;
     _type: "socialLink";
     _key: string;
   }>;
@@ -535,9 +537,9 @@ export type Statement = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
-  slug?: Slug;
-  date?: string;
+  title: string;
+  slug: Slug;
+  date: string;
   pdfDownload?: {
     asset?: {
       _ref: string;
@@ -665,6 +667,5 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | PageBuilder | StatementBanner | FiftyFifty | RichText | Hero | Header | InternalOrExternalLink | Footer | Page | Statement | SanityFileAsset | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
-
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | PageBuilder | TestimonialCard | TestimonialsCarousel | StatementBanner | FiftyFifty | RichText | Hero | HeroCarousel | Header | InternalOrExternalLink | PillarCard | PillarContainer | Footer | Page | Statement | SanityFileAsset | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
