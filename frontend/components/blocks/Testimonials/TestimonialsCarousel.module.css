@@ -1,6 +1,7 @@
 .carouselFrame {
     margin: 2rem auto;
     padding: 0rem 2rem 2rem 2rem;
+    width: auto;
 }
 
 .sectionHeader {
@@ -21,6 +22,7 @@
 }
 
 .carouselWrapper {
+    width: auto;
     position: relative;
     overflow: hidden;
     padding: 0 2rem;
@@ -48,4 +50,11 @@
     display: flex;
     z-index: 10;
     align-content: center;
+}
+
+@media (max-width: 768px) {
+    .carouselFrame, .carouselWrapper {
+        width: 100%;
+        padding: 1rem;
+    }
 }

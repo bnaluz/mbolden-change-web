@@ -1,9 +1,10 @@
 
 .tstSection {
-    height: 500px;
+    /* height: 500px; */
     width: auto;
     padding: 0;
     background-color: var(--brand-light-gray);
+    align-items: center;
 }
 
 .tstGrid {
@@ -17,9 +18,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
-    padding: 3rem;
-    /* overflow-x: auto; */
+    padding: 2rem;
+    overflow: hidden;
+    height: auto;
 }
 
 .imageSection {
@@ -31,9 +32,10 @@
 }
 
 .tstImage {
+    width: 100%;
     height: auto;
-    height: 500px;
-    object-fit: cover;
+    max-height: 600px;
+    object-fit: contain;
 }
 
 .headline {
@@ -47,8 +49,19 @@
     line-height: 1.6;
 }
 
+.author {
+    font-size: 17px;
+
+}
+
+.credentials {
+    font-size: 14px;
+
+}
+
 .button {
     max-width: 200px;
+    align-self: flex-start;
 }
 
 .desktopView {
@@ -66,24 +79,28 @@
     .mobileView {
         display: block;
     }
-
+    .tstSection {
+        width: 100%;
+        padding: 0;
+    }
     .mobileContent {
         background-color: var(--brand-light-gray);
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         align-items: center;
         height: auto;
         padding: 1rem;
     }
 
     .mobileImageSection {
-        width: auto;
-        max-width: 50%;
+        width: 100%;
+        max-width: 100%;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-left: 1rem;
+        padding-left: 0;
+        margin-bottom: 1rem;
     }
 
     .mobileImageSection img {
@@ -93,10 +110,11 @@
     }
 
     .mobileTextSection {
-        width: 75%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding-left: 2rem;
     }
     .pText {
         margin-bottom: 1rem;
