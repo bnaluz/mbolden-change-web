@@ -838,6 +838,13 @@
           },
           "optional": true
         },
+        "hasButton": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        },
         "link": {
           "type": "objectAttribute",
           "value": {
@@ -1205,6 +1212,13 @@
           },
           "optional": true
         },
+        "hasButton": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        },
         "link": {
           "type": "objectAttribute",
           "value": {
@@ -1239,6 +1253,7 @@
     }
   },
   {
+    "name": "statementBanner",
     "name": "statementBanner",
     "type": "type",
     "value": {
@@ -1962,6 +1977,13 @@
             "value": "richText"
           }
         },
+        "title": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
         "text": {
           "type": "objectAttribute",
           "value": {
@@ -2502,6 +2524,13 @@
                 }
               ]
             }
+          },
+          "optional": true
+        },
+        "hasButton": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
           },
           "optional": true
         },
