@@ -1,71 +1,65 @@
 import { defineQuery } from 'next-sanity';
 
 export const PAGE_QUERY = defineQuery(`
-  *[_type == "page" && slug.current == $slug][0]{
-    _id,
-    _type,
-    _createdAt,
-    _updatedAt,
-    title,
-    slug,
-    content[]{
+*[_type == "page" && slug.current == $slug][0]{
+  _id,
+  _type,
+  _createdAt,
+  _updatedAt,
+  title,
+  slug,
+  content[]{
+    ...,
+    _type == "statementBanner" => {
       ...,
-      _type == "statementBanner" => {
+      cta{
+        label,
+        statement->{ "slug": slug.current }
+      },
+      link{
+        title,
+        isExternalLink,
+        url,
+        target,
+        reference->{ _type, slug }
+      }
+    },
+    _type == "heroCarousel" => {
+      ...,
+      slides[]{
         ...,
-        cta{
-          label,                    
-          statement->{
-            "slug": slug.current      
-          }
-        },
-        link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-    }},
-      _type == "heroCarousel" => {
+        link{
+          title,
+          isExternalLink,
+          url,
+          target,
+          reference->{ _type, slug }
+        }
+      }
+    },
+    _type == "testimonialsCarousel" => {
       ...,
+      link{
+        title,
+        isExternalLink,
+        url,
+        target,
+        reference->{ _type, slug }
+      },
       slides[]{
-      ...,
-      link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-    }}}},
-      _type == "testimonialsCarousel" => {
-      ...,
-      link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-    }},
-      slides[]{
-      ...,
-      link {
-      title,
-      isExternalLink,
-      url,
-      target,
-      reference->{
-      _type,
-      slug
-      }}}}
+        ...,
+        link{
+          title,
+          isExternalLink,
+          url,
+          target,
+          reference->{ _type, slug }
+        }
       }
     }
+  }
+}
 `);
-    
 
 export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   _id,
@@ -89,8 +83,8 @@ export const FOOTER_QUERY = defineQuery(`*[_type == 'footer'][0] {
   organizationInfo,
   }`);
 
-
-export const PillarContainer_Query = defineQuery(`*[_type == "pillarContainer"][0]{
+export const PillarContainer_Query =
+  defineQuery(`*[_type == "pillarContainer"][0]{
   title,
   description,
   pillars[]->{
