@@ -1254,7 +1254,6 @@
   },
   {
     "name": "statementBanner",
-    "name": "statementBanner",
     "type": "type",
     "value": {
       "type": "object",
