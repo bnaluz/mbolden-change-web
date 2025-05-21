@@ -84,9 +84,10 @@
 }
 
 .footer-social-container {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
   gap: 8px;
+  place-items: center;
 }
 .copyright {
   color: #888888;
