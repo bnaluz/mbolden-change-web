@@ -1,0 +1,52 @@
+.carouselFrame {
+    margin: 2rem auto;
+    padding: 0rem 2rem 2rem 2rem;
+}
+
+.sectionHeader {
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    max-width: 1440px;
+
+}
+
+.headline {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.button {
+    max-width: 200px;
+}
+
+.carouselWrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.embla {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    /* max-width: 1440px; */
+}
+.emblaContainer {
+    display: flex;
+}
+.emblaSlide {
+    flex: 0 0 100%;
+    min-width: 100%;
+}
+
+.arrowButtonsContainer {
+    position: absolute;
+    bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    right: 1rem;
+    display: flex;
+    z-index: 10;
+    align-content: center;
+}
