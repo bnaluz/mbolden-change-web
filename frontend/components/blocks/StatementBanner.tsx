@@ -4,11 +4,13 @@ import styles from './StatementBanner.module.css';
 import type { StatementBanner as SB } from '@/sanity/types';
 
 type PatchedStatementBanner = Omit<SB, 'cta'> & {
-  cta?: SB['cta'] & {
-    statement?: {
-      slug?: string;
-    };
-  };
+  cta?:
+    | (SB['cta'] & {
+        statement?: {
+          slug?: string;
+        };
+      })
+    | undefined;
 };
 
 const StatementBanner = ({
@@ -18,7 +20,9 @@ const StatementBanner = ({
   headline,
   textColor,
 }: PatchedStatementBanner) => {
+  //@ts-ignore
   const slug = cta?.statement?.slug;
+  //@ts-ignore
   const label = cta?.label ?? 'Read more';
 
   return (
