@@ -42,8 +42,8 @@ export default function TestimonialCard({
               {text && (
                 <div className={styles.pText}>
                   <PortableTextComponent value={text as PortableTextBlock[]} />
-                  {author && <Headline tag="h3" text={author} />}
-                  {credentials && <Headline tag="h4" text={credentials} />}
+                  {author && <Headline tag="h3" text={author} className={styles.author}/>}
+                  {credentials && <Headline tag="h4" text={credentials} className={styles.credentials} />}
                 </div>
               )}
 
