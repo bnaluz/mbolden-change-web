@@ -1,8 +1,8 @@
 .tstSection {
-    /* height: 500px; */
+    height: auto;
     width: auto;
     padding: 1rem;
-    background-color: var(--brand-light-gray);
+    background-color: var(--brand-aqua-teal);
     align-items: center;
 }
 
@@ -20,6 +20,9 @@
     padding: 2rem 1rem;
     overflow: hidden;
     height: auto;
+    min-height: 550px;
+    width: 100%;
+
 }
 
 .imageSection {
@@ -35,32 +38,73 @@
     height: auto;
     max-height: 600px;
     object-fit: contain;
+    border-radius: 1rem;
 }
 
 .headline {
     font-size: 2rem;
     font-weight: 800;
     line-height: 1.2;
+    color: var(--brand-white);
 }
 
 .pText {
     width: 100%;
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.5vw + 0.25rem, 1.25rem);
     line-height: 1.6;
+    /* text-align: center; */
+}
+.pTextWrapper {
+    position: relative;
+    padding: 2rem 1.5rem;
+    margin: 1rem 0;
+    width: 100%;
+    background-color: var(--brand-white);
+    border-radius: 1rem;
 }
 
-.author {
-    font-size: 1.2rem;
+
+.openingQuote, .closingQuote {
+    position: absolute;
+    width: 32px;
+    height: auto;
+    /* opacity: 0.85; */
+    pointer-events: none;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.openingQuote {
+    top: 0;
+    left: 0;
+    transform: translate(-30%, 6%) rotate(-10deg);
+}
+
+.closingQuote {
+    bottom: 0;
+    right: 0;
+    /* transform: translate(40%, -10%) rotate(10deg) scaleX(-1); */
+    transform: translate(30%, -6%) rotate(170deg) ;
+}
+
+
+.credit {
+    padding: 1rem 0;
+    font-size: clamp(1.1rem, 2vw + 0.3rem, 1.5rem);
+    color: var(--brand-white);
     padding-top: 1rem;
 }
 
 .credentials {
-    font-size: 14px;
+    font-size: clamp(1rem, 1.5vw + 0.25rem, 1.25rem);
 }
 
 .button {
     max-width: 200px;
     align-self: flex-start;
+    color: var(--brand-white);
+    border: 1px solid var(--brand-white);
+    box-sizing: border-box;
 }
 
 .desktopView {
@@ -82,6 +126,10 @@
         width: 100%;
         padding: 0;
     }
+    .mobileHeadline {
+        padding: 1rem 0;
+        align-items: center;
+    }
     .mobileContent {
         background-color: var(--brand-light-gray);
         display: flex;
@@ -90,7 +138,22 @@
         height: auto;
         padding: 0 1.3rem;
     }
-
+    .mobilePText {
+        width: 100%;
+        margin: 1.5rem 0;
+        padding: 0 1rem;
+        font-size: clamp(1rem, 1.5vw + 0.25rem, 1.25rem);
+        line-height: 1.6;
+    }
+    .openingQuote, .closingQuote {
+        width: 40px;
+        height: auto;
+    }
+    .mobileCredit {
+        padding: 1rem 0;
+        font-size: clamp(1.1rem, 2vw + 0.3rem, 1.5rem);
+        padding-top: 1rem;
+    }
     .mobileImageSection {
         width: 100%;
         max-width: 100%;

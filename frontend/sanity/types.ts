@@ -157,6 +157,7 @@ export type TestimonialCard = {
     _type: "image";
     _key: string;
   }>;
+  quoteMarksColor?: "yellow" | "white" | "fuchsia" | "black" | "aqua";
   author?: string;
   credentials?: string;
   hasButton?: boolean;

@@ -1101,6 +1101,35 @@
           },
           "optional": false
         },
+        "quoteMarksColor": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "yellow"
+              },
+              {
+                "type": "string",
+                "value": "white"
+              },
+              {
+                "type": "string",
+                "value": "fuchsia"
+              },
+              {
+                "type": "string",
+                "value": "black"
+              },
+              {
+                "type": "string",
+                "value": "aqua"
+              }
+            ]
+          },
+          "optional": true
+        },
         "author": {
           "type": "objectAttribute",
           "value": {

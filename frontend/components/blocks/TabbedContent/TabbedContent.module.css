@@ -1,6 +1,6 @@
 .tabsFrame {
     height: auto;
-    min-height: 800px;
+    min-height: 1000px;
     margin: 0 auto;
     padding: 0rem 3rem;
     width: auto;
@@ -25,6 +25,7 @@
     padding: 5rem 0 0 0;
     justify-content: center;
     border-bottom: 1px solid #e5e5e5;
+    /* gap: 1rem; */
 }
 
 .tabButton {
@@ -47,6 +48,17 @@
     outline: 3px solid var(--brand-aqua-teal);
     outline-offset: 1px;
     z-index: 2;
+}
+
+.tabButton:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--brand-fuchsia);
+    transition: all 0.3s ease;
 }
 
 .tabButton.active::after {
@@ -72,7 +84,7 @@
 @media (max-width: 768px) {
     .tabsFrame {
         height: auto;
-        min-height: 800px;
+        min-height: 1000px;
         margin: 0;
         padding: 0;
     }

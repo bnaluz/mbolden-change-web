@@ -33,7 +33,7 @@ export default function TestimonialsCarousel({
   slides,
 }: TestimonialsCarouselProps) {
   const autoplay = useRef(
-    Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 60000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     autoplay.current,

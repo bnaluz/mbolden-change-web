@@ -8,15 +8,26 @@ import Grid from '@/components/Grid';
 import GridItem from '@/components/GridItem';
 import styles from './TestimonialCard.module.css';
 
+
+const quotesMap = {
+  yellow: '/bold-quote-marks/quote-yellow.png',
+  white: '/bold-quote-marks/quote-white.png',
+  fuchsia: '/bold-quote-marks/quote-fuchsia.png',
+  black: '/bold-quote-marks/quote-black.png',
+  aqua: '/bold-quote-marks/quote-aqua.png',
+};
+
 export default function TestimonialCard({
   title,
   text,
+  quoteMarksColor,
   author,
   credentials,
   image,
   link,
   hasButton,
 }: TestimonialCardType) {
+
   return (
     <section>
       {/* Desktop layout */}
@@ -39,13 +50,36 @@ export default function TestimonialCard({
               {title && (
                 <Headline tag="h1" text={title} className={styles.headline} />
               )}
-              {text && (
+
+              <div className={styles.pTextWrapper}>
+                {quoteMarksColor && quotesMap[quoteMarksColor] && (
+                  <img
+                  src={quotesMap[quoteMarksColor]}
+                  alt="Opening quote"
+                  className={styles.openingQuote}
+                  />
+                )}
+                {quoteMarksColor && quotesMap[quoteMarksColor] && (
+                  <img
+                  src={quotesMap[quoteMarksColor]}
+                  alt="Closing quote"
+                  className={styles.closingQuote}
+                  />
+                )}
+
                 <div className={styles.pText}>
                   <PortableTextComponent value={text as PortableTextBlock[]} />
+                </div>
+
+              </div>
+
+              {author && (
+                <div className={styles.credit}>
                   {author && <Headline tag="h3" text={author} className={styles.author}/>}
                   {credentials && <Headline tag="h4" text={credentials} className={styles.credentials} />}
                 </div>
               )}
+
 
               {hasButton && link && (
                 <div className={styles.buttonWrapper}>
@@ -66,22 +100,37 @@ export default function TestimonialCard({
         <div className={styles.mobileContent}>
           <div className={styles.mobileTextSection}>
             {title && (
-              <Headline tag="h1" text={title} className={styles.headline} />
+              <Headline tag="h1" text={title} className={styles.mobileHeadline} />
             )}
 
-            {text && (
-              <div className={styles.pText}>
-                <PortableTextComponent value={text as PortableTextBlock[]} />
-                {author && (
-                  <Headline tag="h4" text={author} className={styles.author} />
-                )}
-                {credentials && (
-                  <Headline
-                    tag="h5"
-                    text={credentials}
-                    className={styles.credentials}
-                  />
-                )}
+            <div className={styles.pTextWrapper}>
+              {quoteMarksColor && quotesMap[quoteMarksColor] && (
+                <img
+                src={quotesMap[quoteMarksColor]}
+                alt="Opening quote"
+                className={styles.openingQuote}
+                />
+              )}
+              {quoteMarksColor && quotesMap[quoteMarksColor] && (
+                <img
+                src={quotesMap[quoteMarksColor]}
+                alt="Closing quote"
+                className={styles.closingQuote}
+                />
+              )}
+
+              {text && (
+                <div className={styles.mobilePText}>
+                  <PortableTextComponent value={text as PortableTextBlock[]} />
+                </div>
+              )}
+            </div>
+
+
+            {author && (
+              <div className={styles.mobileCredit}>
+                {author && <Headline tag="h3" text={author} className={styles.author}/>}
+                {credentials && <Headline tag="h4" text={credentials} className={styles.credentials} />}
               </div>
             )}
 
