@@ -1426,6 +1426,10 @@
             "of": [
               {
                 "type": "string",
+                "value": "original"
+              },
+              {
+                "type": "string",
                 "value": "16:9"
               },
               {
