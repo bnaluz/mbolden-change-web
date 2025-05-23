@@ -36,7 +36,7 @@
   position: relative;
   display: inline-block;
   padding-bottom: 0.3em;
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 550;
   color: var(--brand-black);
 }
@@ -65,7 +65,7 @@
   background: var(--brand-warm-yellow);
   color: var(--brand-black);
   padding: 8px 16px;
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 600;
   transform: skew(-10.25deg);
   clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
