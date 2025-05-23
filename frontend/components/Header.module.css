@@ -10,6 +10,10 @@
   box-shadow: 0 1px 3px rgba(0 0 0 / 0.04);
 }
 
+.active {
+  color: var(--brand-aqua-teal) !important;
+}
+
 .nav {
   display: flex;
   align-items: center;
