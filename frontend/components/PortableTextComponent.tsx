@@ -72,15 +72,15 @@ const myPortableTextComponents: PortableTextComponents = {
       return <ul className={styles['unordered-list']}>{children}</ul>;
     },
     number: ({ children }) => {
-      return <ol className={styles['unordered-list']}>{children}</ol>;
+      return <ol className={styles['ordered-list']}>{children}</ol>;
     },
   },
   listItem: {
     bullet: ({ children }) => {
-      return <li className={styles['unordered-list-item']}>{children}</li>;
+      return <li className={styles['list-item']}>{children}</li>;
     },
     number: ({ children }) => {
-      return <li className={styles['ordered-list-item']}>{children}</li>;
+      return <li className={styles['list-item']}>{children}</li>;
     },
   },
 };

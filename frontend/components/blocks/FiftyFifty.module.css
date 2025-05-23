@@ -9,8 +9,20 @@
   }
   
   .imageWrapper {
-    margin-bottom: 24px;
+    position: relative;
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: auto;
+    margin-bottom: auto;
+    overflow: hidden;
   }
+
+    .imageWrapper img {
+      transform: scale(0.9);
+      transform-origin: center; 
+      object-fit: fill;
+    }
+  
 
   .desktopView {
     display: block;
@@ -76,4 +88,24 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     border: none;
+  }
+
+  .aspectRatio-16-9 {
+    aspect-ratio: 16/9;
+    max-height: 60vh;
+  }
+    
+  .aspectRatio-4-3 {
+    aspect-ratio: 4/3;
+    max-height: 60vh;
+  }
+    
+  .aspectRatio-1-1 {
+    aspect-ratio: 1/1;
+    max-height: 60vh;
+  }
+    
+  .aspectRatio-9-16 {
+    aspect-ratio: 9/16;
+    max-height: 60vh;
   }

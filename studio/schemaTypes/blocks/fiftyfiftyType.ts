@@ -32,6 +32,21 @@ export const fiftyfiftyType = defineType({
                 })
         }),
         defineField({
+            name: 'imageAspectRatio',
+            title: 'Image Aspect Ratio',
+            type: 'string',
+            options: { 
+                list: [
+                    { title: '16:9', value: '16:9' },
+                    { title: '1:1', value: '1:1' },
+                    { title: '4:3', value: '4:3'},
+                    { title: '9:16', value: '9:16'},
+                ],
+                layout: 'dropdown',
+            },
+            hidden: ({ parent }) => parent?.mediaType !== 'image',
+        }),
+        defineField({
             name: 'leftOrRightImage',
             title: 'Media Position',
             type: 'string',

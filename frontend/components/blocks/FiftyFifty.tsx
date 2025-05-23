@@ -17,9 +17,22 @@ export default function FiftyFifty({
     rightImage,
     leftVideoUrl,
     rightVideoUrl,
-    mediaType
+    mediaType,
+    imageAspectRatio,
 }: FiftyFiftyType) {
     const isImageOnTop = mobileLayout === 'imageTop'
+
+    const getAspectRatioClass = () => {
+      if (!imageAspectRatio) return undefined;
+      
+      switch (imageAspectRatio) {
+        case '16:9': return styles['aspectRatio-16-9'];
+        case '4:3': return styles['aspectRatio-4-3'];
+        case '1:1': return styles['aspectRatio-1-1'];
+        case '9:16': return styles['aspectRatio-9-16'];
+        default: return '';
+      }
+    }
 
     const getGoogleDriveUrl = (url: string) => {
       if (!url) return '';
@@ -48,8 +61,8 @@ export default function FiftyFifty({
                 {mediaType === 'video' && leftVideoUrl 
                   ? <VideoPlayer url={leftVideoUrl} title="Left Google Drive Video" />
                   : leftImage 
-                  ? <div className={styles.imageWrapper}>
-                      <SanityNextImage image={leftImage} fit="cover" />
+                  ? <div className={`${styles.imageWrapper} ${getAspectRatioClass()}`}>
+                      <SanityNextImage image={leftImage} fit="cover"/>
                     </div>
                   : null}
                 {leftTitle && <Headline tag='h2' text={leftTitle} />}
@@ -60,8 +73,8 @@ export default function FiftyFifty({
                 {mediaType === 'video' && rightVideoUrl 
                   ? <VideoPlayer url={rightVideoUrl} title="Left Google Drive Video" />
                   : rightImage 
-                  ? <div className={styles.imageWrapper}>
-                      <SanityNextImage image={rightImage} fit="cover" />
+                  ? <div className={`${styles.imageWrapper} ${getAspectRatioClass()}`}>
+                      <SanityNextImage image={rightImage} fit="cover"/>
                     </div>
                   : null}
                 {rightTitle && <Headline tag='h2' text={rightTitle} />}
@@ -80,14 +93,14 @@ export default function FiftyFifty({
                 {mediaType === 'video' && leftVideoUrl
                 ? <VideoPlayer url={leftVideoUrl} title="Left Mobile Video" />
                 : leftImage 
-                ?  <div className={styles.imageWrapper}>
+                ?  <div className={`${styles.imageWrapper} ${getAspectRatioClass()}`}>
                     <SanityNextImage image={leftImage} fit="cover" />
                   </div>
                 : null}
                 {mediaType === 'video' && rightVideoUrl
                 ? <VideoPlayer url={rightVideoUrl} title="Right Mobile Video" />
                 : rightImage
-                ? <div className={styles.imageWrapper}>
+                ? <div className={`${styles.imageWrapper} ${getAspectRatioClass()}`}>
                     <SanityNextImage image={rightImage} fit="cover" />
                   </div>
                 : null}
@@ -113,15 +126,15 @@ export default function FiftyFifty({
                 {mediaType === 'video' && leftVideoUrl
                 ? <VideoPlayer url={leftVideoUrl} title="Left Mobile Video" />
                 : leftImage 
-                ?  <div className={styles.imageWrapper}>
-                    <SanityNextImage image={leftImage} fit="cover" />
+                ?  <div className={`${styles.imageWrapper} ${getAspectRatioClass()}`}>
+                    <SanityNextImage image={leftImage} fit="cover"/>
                   </div>
                 : null}
                 {mediaType === 'video' && rightVideoUrl
                 ? <VideoPlayer url={rightVideoUrl} title="Right Mobile Video" />
                 : rightImage
-                ? <div className={styles.imageWrapper}>
-                    <SanityNextImage image={rightImage} fit="cover" />
+                ? <div className={`${styles.imageWrapper} ${getAspectRatioClass()}`}>
+                  <SanityNextImage image={rightImage} fit="cover"  />
                   </div>
                 : null}
               </div>

@@ -28,9 +28,24 @@ export const testimonialCardType = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'hasButton',
+      title: 'Add Button?',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
       name: 'link',
       title: 'Button Link',
       type: 'internalOrExternalLink',
+      hidden: ({parent}) => !parent?.hasButton,
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          const parent = context.parent as any
+          if (parent?.hasButton && !value) {
+            return 'A button link is required if "Display Button?" is checked.'
+          }
+          return true
+        }).optional(),
     }),
     defineField({
       name: 'image',
@@ -41,7 +56,6 @@ export const testimonialCardType = defineType({
         hotspot: true,
       },
       validation: (Rule) => Rule.required().error('Testimonial image is required.'),
-
     }),
   ],
 })
