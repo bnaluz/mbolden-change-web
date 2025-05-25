@@ -33,14 +33,17 @@ export default function TestimonialCard({
       {/* Desktop layout */}
       <div className={styles.desktopView}>
         <Grid className={styles.tstSection}>
-          <GridItem desktopSpan={6} mobileSpan={12}>
+          <GridItem desktopSpan={6} mobileSpan={12} >
             {image && (
               <div className={styles.imageSection}>
-                <SanityNextImage
-                  image={image}
-                  fit="cover"
-                  className={styles.tstImage}
-                />
+                <div className={styles.polaroidCard}>
+                  <SanityNextImage
+                    image={image}
+                    fit="contain"
+                    className={styles.tstImage}
+                  />
+                  <p className={styles.polaroidCaption}>{image?.alt}</p>
+                </div>
               </div>
             )}
           </GridItem>
@@ -59,13 +62,6 @@ export default function TestimonialCard({
                   className={styles.openingQuote}
                   />
                 )}
-                {quoteMarksColor && quotesMap[quoteMarksColor] && (
-                  <img
-                  src={quotesMap[quoteMarksColor]}
-                  alt="Closing quote"
-                  className={styles.closingQuote}
-                  />
-                )}
 
                 <div className={styles.pText}>
                   <PortableTextComponent value={text as PortableTextBlock[]} />
@@ -75,7 +71,7 @@ export default function TestimonialCard({
 
               {author && (
                 <div className={styles.credit}>
-                  {author && <Headline tag="h3" text={author} className={styles.author}/>}
+                  <Headline tag="h3" text={author} className={styles.author}/>
                   {credentials && <Headline tag="h4" text={credentials} className={styles.credentials} />}
                 </div>
               )}
@@ -111,13 +107,6 @@ export default function TestimonialCard({
                 className={styles.openingQuote}
                 />
               )}
-              {quoteMarksColor && quotesMap[quoteMarksColor] && (
-                <img
-                src={quotesMap[quoteMarksColor]}
-                alt="Closing quote"
-                className={styles.closingQuote}
-                />
-              )}
 
               {text && (
                 <div className={styles.mobilePText}>
@@ -129,7 +118,7 @@ export default function TestimonialCard({
 
             {author && (
               <div className={styles.mobileCredit}>
-                {author && <Headline tag="h3" text={author} className={styles.author}/>}
+                <Headline tag="h3" text={author} className={styles.author}/>
                 {credentials && <Headline tag="h4" text={credentials} className={styles.credentials} />}
               </div>
             )}
@@ -145,11 +134,14 @@ export default function TestimonialCard({
 
           {image && (
             <div className={styles.mobileImageSection}>
-              <SanityNextImage
-                image={image}
-                fit="cover"
-                className={styles.tstImage}
-              />
+                <div className={styles.polaroidCard}>
+                  <SanityNextImage
+                    image={image}
+                    fit="contain"
+                    className={styles.tstImage}
+                  />
+                  <p className={styles.polaroidCaption}>{image?.alt}</p>
+                </div>
             </div>
           )}
         </div>

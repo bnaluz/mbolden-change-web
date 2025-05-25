@@ -1,7 +1,9 @@
 .carouselFrame {
     margin: 2rem auto;
-    padding: 0rem 2rem 2rem 2rem;
+    padding: 0rem 1rem 2rem 1rem;
     width: auto;
+    /* height: auto; */
+
 }
 
 .sectionHeader {
@@ -27,18 +29,26 @@
     padding: 0 2rem;
     max-width: 1440px;
     margin: 0 auto;
+    /* height: auto; */
 }
 .embla {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    /* height: auto; */
 }
 .emblaContainer {
     display: flex;
+    height: auto;
 }
 .emblaSlide {
     flex: 0 0 100%;
     min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    height: auto;
 }
 
 .arrowButtonsContainer {
@@ -48,7 +58,6 @@
     right: 1rem;
     display: flex;
     z-index: 10;
-    align-content: center;
 }
 
 @media (max-width: 768px) {
